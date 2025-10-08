@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>KubCoin - Финансовый бот от iTmageLab</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link data-trunk rel="copy-dir" href="static/images" />
+    <link rel="icon" type="image/png" href="images/favicon.ico">
+    <style>
+    .phone-fade {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+    .phone-fade::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.6); /* внутреннее затемнение */
+      pointer-events: none;
+    }
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+    .faq-answer {
+      display: none;
+      padding: 1rem;
+      border-left: 3px solid #3273dc; /* синий акцент */
+      background-color: #f9f9f9;
+      border-radius: 6px;
+    }
+    .faq-item.is-active .faq-answer {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    </style>
+  </head>
+  <body>
+  </body>
+</html>
+
