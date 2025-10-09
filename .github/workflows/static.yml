@@ -54,3 +54,11 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Send Telegram message
+        if: success()
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TG_CHAT_ID }}
+          token: ${{ secrets.TG_BOT_TOKEN }}
+          message: "✅ Сборка прошла успешно в репозитории ${{ github.repository }}!"
