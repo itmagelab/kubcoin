@@ -241,7 +241,7 @@ pub(crate) fn chats() -> Html {
             )],
         },
         ChatItem {
-            title: "Используй AI для операций",
+            title: "Используй ИИ для операций",
             subtitle: "KubCoin умеет анализировать текст и голосовые",
             dialog: vec![
                 (
@@ -371,7 +371,7 @@ pub(crate) fn chat(chat: &ChatItem) -> Html {
                     </div>
                 </div>
                 <div class="block is-flex is-justify-content-flex-start">
-                    <pre class="box" style="margin: 0;">{ ans }</pre>
+                    <pre class="box" style="margin: 0; white-space: pre-wrap; word-wrap: break-word; overflow-wrap: anywhere;">{ ans }</pre>
                 </div>
             </>
             }
