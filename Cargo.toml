@@ -5,6 +5,8 @@ edition = "2024"
 
 [dependencies]
 js-sys = "0.3.81"
+serde = { version = "1.0.228", features = ["derive"] }
+serde_yaml = "0.9.34"
 tracing = "0.1.41"
 tracing-subscriber = { version = "0.3.20", features = ["json", "time"] }
 tracing-web = "0.1.3"
