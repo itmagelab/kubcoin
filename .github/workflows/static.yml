@@ -61,4 +61,9 @@ jobs:
         with:
           to: ${{ secrets.TG_CHAT_ID }}
           token: ${{ secrets.TG_BOT_TOKEN }}
-          message: "✅ Сборка прошла успешно в репозитории ${{ github.repository }}!"
+          message: |
+            ✅ Сборка прошла успешно в репозитории *${{ github.repository }}*
+
+            🪵 Ветка: `${{ github.ref_name }}`
+            🧩 Коммит: [${{ github.sha }}](https://github.com/${{ github.repository }}/commit/${{ github.sha }})
+            💬 Сообщение: _${{ github.event.head_commit.message }}_
