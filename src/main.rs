@@ -41,7 +41,7 @@ fn main() {
         .with(perf_layer)
         .init();
     let object = JsValue::from("Starting app...");
-    tracing::info!("Hello {}", object.as_string().unwrap());
+    tracing::info!("{}", object.as_string().unwrap());
 
     yew::Renderer::<App>::new().render();
 }
