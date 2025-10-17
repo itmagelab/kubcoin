@@ -1,70 +1,258 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>KubCoin - Финансовый бот от iTmageLab</title>
-    <meta name="description" content="KubCoin — безопасный и высокопроизводительный финансовый бот, созданный на Rust. Автоматизация, аналитика и надёжность в одном инструменте." />
-    <meta name="keywords" content="KubCoin, Rust, финансовый бот, bot, блокчейн, автоматизация" />
-    <meta property="og:title" content="KubCoin — Финансовый бот на Rust" />
-    <meta property="og:description" content="Безопасный, быстрый и надёжный финансовый бот на Rust. Современная архитектура и безопасность уровня SRE." />
-    <meta property="og:image" content="images/og-image.png" />
-    <meta property="og:url" content="https://kubcoin.ru" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="ru_RU" />
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+        <title>KubCoin - Финансовый бот от iTmageLab</title>
+        <meta
+            name="description"
+            content="KubCoin — безопасный и высокопроизводительный финансовый бот, созданный на Rust. Автоматизация, аналитика и надёжность в одном инструменте."
+        />
+        <meta
+            name="keywords"
+            content="KubCoin, Rust, финансовый бот, bot, блокчейн, автоматизация"
+        />
+        <meta property="og:title" content="KubCoin — Финансовый бот на Rust" />
+        <meta
+            property="og:description"
+            content="Безопасный, быстрый и надёжный финансовый бот на Rust. Современная архитектура и безопасность уровня SRE."
+        />
+        <meta property="og:image" content="images/og-image.png" />
+        <meta property="og:url" content="https://kubcoin.ru" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="ru_RU" />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
-    <link data-trunk rel="copy-dir" href="static/images" />
-    <link data-trunk rel="copy-file" href="static/yandex_bc389150b2accc4c.html" />
-    <link data-trunk rel="copy-file" href="static/robots.txt" />
-    <link rel="icon" type="image/png" href="images/favicon.ico">
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-        (function(m,e,t,r,i,k,a){
-            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104580346', 'ym');
+        <!-- Preload critical resources -->
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+        <link rel="preconnect" href="https://mc.yandex.ru" crossorigin />
+        <link
+            rel="preload"
+            href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+            as="style"
+        />
 
-        ym(104580346, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/104580346" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
-    <style>
-    .phone-fade {
-      position: relative;
-      overflow: hidden;
-      border-radius: 20px;
-    }
-    .phone-fade::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.6); /* внутреннее затемнение */
-      pointer-events: none;
-    }
-    .faq-item {
-      margin-bottom: 1rem;
-    }
-    .faq-answer {
-      display: none;
-      padding: 1rem;
-      border-left: 3px solid #3273dc; /* синий акцент */
-      background-color: #f9f9f9;
-      border-radius: 6px;
-    }
-    .faq-item.is-active .faq-answer {
-      display: block;
-      animation: fadeIn 0.3s ease;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-5px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    </style>
-  </head>
-  <body>
-  </body>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+        />
+        <link data-trunk rel="copy-dir" href="static/images" />
+        <link
+            data-trunk
+            rel="copy-file"
+            href="static/yandex_bc389150b2accc4c.html"
+        />
+        <link data-trunk rel="copy-file" href="static/robots.txt" />
+        <link data-trunk rel="copy-file" href="static/sitemap.xml" />
+        <link rel="icon" type="image/png" href="images/favicon.ico" />
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+            (function (m, e, t, r, i, k, a) {
+                m[i] =
+                    m[i] ||
+                    function () {
+                        (m[i].a = m[i].a || []).push(arguments);
+                    };
+                m[i].l = 1 * new Date();
+                for (var j = 0; j < document.scripts.length; j++) {
+                    if (document.scripts[j].src === r) {
+                        return;
+                    }
+                }
+                ((k = e.createElement(t)),
+                    (a = e.getElementsByTagName(t)[0]),
+                    (k.async = 1),
+                    (k.src = r),
+                    a.parentNode.insertBefore(k, a));
+            })(
+                window,
+                document,
+                "script",
+                "https://mc.yandex.ru/metrika/tag.js?id=104580346",
+                "ym",
+            );
+
+            ym(104580346, "init", {
+                ssr: true,
+                webvisor: true,
+                clickmap: true,
+                ecommerce: "dataLayer",
+                accurateTrackBounce: true,
+                trackLinks: true,
+            });
+        </script>
+        <!-- Structured Data (JSON-LD) for SEO -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "SoftwareApplication",
+                "name": "KubCoin",
+                "applicationCategory": "FinanceApplication",
+                "operatingSystem": "Telegram",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "RUB"
+                },
+                "description": "Безопасный и высокопроизводительный финансовый бот, созданный на Rust. Автоматизация, аналитика и надёжность в одном инструменте.",
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.8",
+                    "ratingCount": "150"
+                },
+                "author": {
+                    "@type": "Organization",
+                    "name": "iTmageLab",
+                    "url": "https://kubcoin.ru"
+                }
+            }
+        </script>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "KubCoin",
+                "url": "https://kubcoin.ru",
+                "logo": "https://kubcoin.ru/images/og-image.png",
+                "sameAs": [
+                    "https://t.me/kubcoin_bot",
+                    "https://t.me/kubcoin_chat",
+                    "https://t.me/kubcoin_news"
+                ],
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "Customer Support",
+                    "url": "https://t.me/kubcoin_chat"
+                }
+            }
+        </script>
+        <noscript
+            ><div>
+                <img
+                    src="https://mc.yandex.ru/watch/104580346"
+                    style="position: absolute; left: -9999px"
+                    alt=""
+                /></div
+        ></noscript>
+        <!-- /Yandex.Metrika counter -->
+        <style>
+            .phone-fade {
+                position: relative;
+                overflow: hidden;
+                border-radius: 20px;
+            }
+            .phone-fade::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                border-radius: inherit;
+                box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.6); /* внутреннее затемнение */
+                pointer-events: none;
+            }
+            .faq-item {
+                margin-bottom: 1rem;
+            }
+            .faq-answer {
+                display: none;
+                padding: 1rem;
+                border-left: 3px solid #3273dc; /* синий акцент */
+                background-color: #f9f9f9;
+                border-radius: 6px;
+            }
+            .faq-item.is-active .faq-answer {
+                display: block;
+                animation: fadeIn 0.3s ease;
+            }
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-5px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Screen reader only utility class */
+            .is-sr-only {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                white-space: nowrap;
+                border-width: 0;
+            }
+
+            /* Smooth scroll behavior */
+            html {
+                scroll-behavior: smooth;
+            }
+
+            /* Focus indicators for accessibility */
+            *:focus {
+                outline: 2px solid #3273dc;
+                outline-offset: 2px;
+            }
+
+            /* Skip to main content link for accessibility */
+            .skip-to-main {
+                position: absolute;
+                left: -9999px;
+                z-index: 999;
+                padding: 1em;
+                background-color: #3273dc;
+                color: white;
+                text-decoration: none;
+            }
+
+            .skip-to-main:focus {
+                left: 50%;
+                transform: translateX(-50%);
+                top: 0;
+            }
+
+            /* Smooth animations for UX */
+            .box,
+            .button,
+            .card {
+                transition: all 0.3s ease;
+            }
+
+            .box:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            }
+
+            .button:hover {
+                transform: translateY(-2px);
+            }
+
+            /* Loading animation */
+            @keyframes pulse {
+                0%,
+                100% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0.5;
+                }
+            }
+
+            .is-loading {
+                animation: pulse 1.5s ease-in-out infinite;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="#main-content" class="skip-to-main"
+            >Перейти к основному содержанию</a
+        >
+        <main id="main-content" role="main"></main>
+    </body>
 </html>

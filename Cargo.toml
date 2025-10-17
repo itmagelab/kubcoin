@@ -13,3 +13,11 @@ tracing-web = "0.1.3"
 wasm-bindgen = "0.2.104"
 web-sys = "0.3.81"
 yew = { git = "https://github.com/yewstack/yew/", features = ["csr"] }
+
+[profile.release]
+# Optimize for size
+opt-level = "z"     # Optimize for size instead of speed
+lto = true          # Enable Link Time Optimization
+codegen-units = 1   # Better optimization with single codegen unit
+strip = true        # Strip debug symbols
+panic = "abort"     # Reduce panic handling code size
