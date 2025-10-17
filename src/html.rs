@@ -39,8 +39,16 @@ pub(crate) fn header() -> Html {
 pub(crate) fn body() -> Html {
     html! {
         <div class="container">
+            <section id="features" aria-labelledby="features-heading">
+                <Features />
+            </section>
+            <Split />
             <section id="examples" aria-labelledby="examples-heading">
                 <Chats />
+            </section>
+            <Split />
+            <section id="security" aria-labelledby="security-heading">
+                <Security />
             </section>
             <Split />
             <section id="faq" aria-labelledby="faq-heading">
@@ -59,6 +67,111 @@ pub(crate) fn split() -> Html {
     html! {
        <section class="section">
        </section>
+    }
+}
+
+#[function_component(Features)]
+pub(crate) fn features() -> Html {
+    html! {
+        <div class="container">
+            <h2 id="features-heading" class="title is-2 has-text-centered">{ "Возможности" }</h2>
+            <p class="subtitle has-text-centered has-text-grey">{ "Всё необходимое для управления финансами" }</p>
+
+            <div class="columns is-multiline" style="margin-top: 2rem;">
+                <div class="column is-half-tablet is-one-third-desktop">
+                    <div class="box has-text-centered" style="height: 100%;">
+                        <span class="icon is-large" style="font-size: 3rem;">{ "🤖" }</span>
+                        <h3 class="title is-4">{ "AI-помощник" }</h3>
+                        <p>{ "Понимает естественный язык и голосовые сообщения. Просто скажите что потратили — бот сам всё поймёт." }</p>
+                    </div>
+                </div>
+
+                <div class="column is-half-tablet is-one-third-desktop">
+                    <div class="box has-text-centered" style="height: 100%;">
+                        <span class="icon is-large" style="font-size: 3rem;">{ "📊" }</span>
+                        <h3 class="title is-4">{ "Аналитика" }</h3>
+                        <p>{ "Детальные отчёты по категориям, месяцам и периодам. Видите куда уходят деньги." }</p>
+                    </div>
+                </div>
+
+                <div class="column is-half-tablet is-one-third-desktop">
+                    <div class="box has-text-centered" style="height: 100%;">
+                        <span class="icon is-large" style="font-size: 3rem;">{ "🔐" }</span>
+                        <h3 class="title is-4">{ "Безопасность" }</h3>
+                        <p>{ "Написан на Rust для максимальной надёжности. Поддержка on-premise для полного контроля данных." }</p>
+                    </div>
+                </div>
+
+                <div class="column is-half-tablet is-one-third-desktop">
+                    <div class="box has-text-centered" style="height: 100%;">
+                        <span class="icon is-large" style="font-size: 3rem;">{ "⚡" }</span>
+                        <h3 class="title is-4">{ "Быстрый учёт" }</h3>
+                        <p>{ "Добавляйте операции за секунды. Математические выражения, повтор последней операции — всё для удобства." }</p>
+                    </div>
+                </div>
+
+                <div class="column is-half-tablet is-one-third-desktop">
+                    <div class="box has-text-centered" style="height: 100%;">
+                        <span class="icon is-large" style="font-size: 3rem;">{ "👥" }</span>
+                        <h3 class="title is-4">{ "Совместный бюджет" }</h3>
+                        <p>{ "Используйте бота в группах для ведения семейного или проектного бюджета вместе." }</p>
+                    </div>
+                </div>
+
+                <div class="column is-half-tablet is-one-third-desktop">
+                    <div class="box has-text-centered" style="height: 100%;">
+                        <span class="icon is-large" style="font-size: 3rem;">{ "🎯" }</span>
+                        <h3 class="title is-4">{ "Категории" }</h3>
+                        <p>{ "Автоматическая категоризация расходов. Гибкая настройка своих категорий." }</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+#[function_component(Security)]
+pub(crate) fn security() -> Html {
+    html! {
+        <div class="container">
+            <h2 id="security-heading" class="title is-2 has-text-centered">{ "Безопасность и приватность" }</h2>
+            <p class="subtitle has-text-centered has-text-grey">{ "Ваши данные под надёжной защитой" }</p>
+
+            <div class="columns is-vcentered" style="margin-top: 2rem;">
+                <div class="column is-half">
+                    <div class="content">
+                        <h3 class="title is-4">{ "🔒 Шифрование данных" }</h3>
+                        <p>{ "Все финансовые данные хранятся в зашифрованном виде. Никто, кроме вас, не имеет доступа к вашим операциям." }</p>
+
+                        <h3 class="title is-4">{ "🏠 On-premise решение" }</h3>
+                        <p>{ "Хотите полный контроль? Разверните KubCoin на своём сервере. Ваши данные остаются только у вас — без облаков, без третьих сторон." }</p>
+
+                        <h3 class="title is-4">{ "🦀 Написано на Rust" }</h3>
+                        <p>{ "Rust гарантирует безопасность памяти и отсутствие уязвимостей на уровне кода. Тот же язык, который используется в критических системах и блокчейн-проектах." }</p>
+                    </div>
+                </div>
+
+                <div class="column is-half">
+                    <div class="content">
+                        <h3 class="title is-4">{ "🚫 Никаких персональных данных" }</h3>
+                        <p>{ "Не требуем email, пароли или другие личные данные. Только Telegram ID для идентификации." }</p>
+
+                        <h3 class="title is-4">{ "🔄 Резервные копии" }</h3>
+                        <p>{ "Автоматическое создание backup'ов. Ваши данные никогда не потеряются." }</p>
+
+                        <h3 class="title is-4">{ "✅ Open Source" }</h3>
+                        <p>{ "Планируется открытие исходного кода. Вы сможете самостоятельно проверить безопасность и внести свои улучшения." }</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notification is-info is-light" style="margin-top: 2rem;">
+                <p class="has-text-centered">
+                    <strong>{ "💡 Совет:" }</strong>
+                    { " Для максимальной безопасности используйте on-premise версию KubCoin на своём сервере или VPS." }
+                </p>
+            </div>
+        </div>
     }
 }
 
