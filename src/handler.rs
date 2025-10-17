@@ -6,6 +6,8 @@ const CONTENT: &str = include_str!("../static/content.yaml");
 pub(crate) struct Content {
     pub(crate) chats: Vec<ChatItem>,
     pub(crate) qa: Vec<QAItem>,
+    pub(crate) features: Vec<FeatureItem>,
+    pub(crate) security: Vec<SecurityItem>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -25,6 +27,20 @@ pub(crate) struct Dialog {
 pub(crate) struct QAItem {
     pub(crate) question: String,
     pub(crate) answer: String,
+}
+
+#[derive(Debug, Deserialize)]
+pub(crate) struct FeatureItem {
+    pub(crate) icon: String,
+    pub(crate) title: String,
+    pub(crate) description: String,
+}
+
+#[derive(Debug, Deserialize)]
+pub(crate) struct SecurityItem {
+    pub(crate) icon: String,
+    pub(crate) title: String,
+    pub(crate) description: String,
 }
 
 pub(crate) fn get_content() -> Content {
