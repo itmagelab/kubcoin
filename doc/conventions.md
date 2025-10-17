@@ -468,19 +468,38 @@ mod tests {
 
 ### Commit messages
 
-```bash
-# ✅ Правильно — conventional commits
-git commit -m "feat: добавить новую секцию с отзывами"
-git commit -m "fix: исправить ошибку загрузки изображений"
-git commit -m "docs: обновить README"
-git commit -m "style: улучшить отступы в FAQ"
-git commit -m "refactor: вынести button компоненты в отдельный файл"
-git commit -m "perf: оптимизировать размер WASM бандла"
+**ОБЯЗАТЕЛЬНО:** Все commit messages **только на английском языке**
 
-# ❌ Неправильно
+```bash
+# ✅ Правильно — conventional commits на английском
+git commit -m "feat: add new testimonials section"
+git commit -m "fix: resolve image loading issue"
+git commit -m "docs: update README"
+git commit -m "style: improve FAQ spacing"
+git commit -m "refactor: extract button components to separate file"
+git commit -m "perf: optimize WASM bundle size"
+
+# ❌ Неправильно — русский язык
+git commit -m "feat: добавить новую секцию"
+git commit -m "fix: исправить баг"
+
+# ❌ Неправильно — неинформативные сообщения
 git commit -m "updates"
 git commit -m "fix bug"
 git commit -m "wip"
+```
+
+**Формат:** `<type>: <description>`
+
+**Типы коммитов:**
+- `feat:` — новая функциональность
+- `fix:` — исправление бага
+- `docs:` — изменения в документации
+- `style:` — форматирование, отступы (не влияет на код)
+- `refactor:` — рефакторинг кода
+- `perf:` — улучшение производительности
+- `test:` — добавление тестов
+- `chore:` — обновление зависимостей, конфигурации
 ```
 
 ### Branches
