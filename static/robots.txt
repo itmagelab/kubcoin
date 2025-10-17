@@ -1,3 +1,11 @@
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /static/
+Disallow: /*.wasm$
+Disallow: /*.js$
 
+# Sitemap
+Sitemap: https://kubcoin.ru/sitemap.xml
+
+# Crawl-delay for polite bots
+Crawl-delay: 1

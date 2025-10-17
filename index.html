@@ -6,24 +6,64 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
-        <title>KubCoin - Финансовый бот от iTmageLab</title>
+        <title>
+            KubCoin - Телеграм бот для управления финансами | iTmageLab
+        </title>
         <meta
             name="description"
-            content="KubCoin — безопасный и высокопроизводительный финансовый бот, созданный на Rust. Автоматизация, аналитика и надёжность в одном инструменте."
+            content="KubCoin — современный Telegram-бот для учёта доходов и расходов. Быстрый, безопасный и удобный инструмент управления личными финансами. Создан на Rust для максимальной производительности."
         />
         <meta
             name="keywords"
-            content="KubCoin, Rust, финансовый бот, bot, блокчейн, автоматизация"
+            content="KubCoin, финансовый бот, Telegram бот, учёт финансов, управление расходами, личные финансы, бот для финансов, iTmageLab, Rust, финансовая аналитика"
         />
-        <meta property="og:title" content="KubCoin — Финансовый бот на Rust" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://kubcoin.ru/" />
+        <meta
+            property="og:title"
+            content="KubCoin — Telegram-бот для управления финансами"
+        />
         <meta
             property="og:description"
-            content="Безопасный, быстрый и надёжный финансовый бот на Rust. Современная архитектура и безопасность уровня SRE."
+            content="Управляйте своими доходами и расходами легко и безопасно. KubCoin — современный финансовый помощник в Telegram с мощной аналитикой."
         />
-        <meta property="og:image" content="images/og-image.png" />
-        <meta property="og:url" content="https://kubcoin.ru" />
-        <meta property="og:type" content="website" />
+        <meta
+            property="og:image"
+            content="https://kubcoin.ru/images/og-image.png"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta
+            property="og:image:alt"
+            content="KubCoin - Финансовый бот для Telegram"
+        />
         <meta property="og:locale" content="ru_RU" />
+        <meta property="og:site_name" content="KubCoin" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://kubcoin.ru/" />
+        <meta
+            name="twitter:title"
+            content="KubCoin — Telegram-бот для управления финансами"
+        />
+        <meta
+            name="twitter:description"
+            content="Управляйте своими доходами и расходами легко и безопасно. KubCoin — современный финансовый помощник в Telegram."
+        />
+        <meta
+            name="twitter:image"
+            content="https://kubcoin.ru/images/og-image.png"
+        />
+
+        <!-- Additional SEO meta tags -->
+        <meta name="author" content="iTmageLab" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="Russian" />
+        <meta name="revisit-after" content="7 days" />
+        <link rel="canonical" href="https://kubcoin.ru/" />
 
         <!-- Preload critical resources -->
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
@@ -336,6 +376,56 @@
                 .button {
                     border-width: 2px;
                 }
+            }
+
+            /* Loading skeleton styles */
+            .skeleton {
+                background: linear-gradient(
+                    90deg,
+                    #f0f0f0 0%,
+                    #e0e0e0 20%,
+                    #f0f0f0 40%,
+                    #f0f0f0 100%
+                );
+                background-size: 200% 100%;
+                animation: loading 1.5s ease-in-out infinite;
+                border-radius: 4px;
+            }
+
+            @keyframes loading {
+                0% {
+                    background-position: 200% 0;
+                }
+                100% {
+                    background-position: -200% 0;
+                }
+            }
+
+            .skeleton-text {
+                height: 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .skeleton-title {
+                height: 2rem;
+                margin-bottom: 1rem;
+                width: 60%;
+            }
+
+            .skeleton-box {
+                height: 200px;
+                margin-bottom: 1rem;
+            }
+
+            .skeleton-button {
+                height: 44px;
+                width: 150px;
+                border-radius: 4px;
+            }
+
+            /* Hide skeleton when content is loaded */
+            .content-loaded .skeleton {
+                display: none;
             }
         </style>
     </head>
