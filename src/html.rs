@@ -13,9 +13,9 @@ pub(crate) fn header() -> Html {
                 <div class="column is-full-mobile is-half-tablet">
                   <div class="box">
                     <h1 class="title is-1 has-text-weight-bold">
-                                { "KubCoin" }
+                                <span style="font-size: 1.2em;">{ "💰 " }</span>{ "KubCoin" }
                     </h1>
-                  <h2 class="subtitle is-3 has-text-grey">{ "Телеграм Бот для управления доходами и расходами" }</h2>
+                  <h2 class="subtitle is-3 has-text-grey">{ "Ваш умный финансовый помощник" }</h2>
                   </div>
                   <nav class="buttons" aria-label="Основные действия">
                       <button::Start />
