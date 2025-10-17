@@ -176,7 +176,6 @@ pub(crate) fn pricing() -> Html {
                             <p><strong>{ "Всё из бесплатного, плюс:" }</strong></p>
                             <ul style="list-style: none; padding-left: 0;">
                                 <li>{ "✅ Расширенная аналитика" }</li>
-                                <li>{ "✅ Экспорт в Excel/CSV" }</li>
                                 <li>{ "✅ Графики и визуализация" }</li>
                                 <li>{ "✅ Планирование бюджета" }</li>
                                 <li>{ "✅ Множественные валюты" }</li>
