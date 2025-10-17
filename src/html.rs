@@ -47,6 +47,10 @@ pub(crate) fn body() -> Html {
                 <Chats />
             </section>
             <Split />
+            <section id="pricing" aria-labelledby="pricing-heading">
+                <Pricing />
+            </section>
+            <Split />
             <section id="security" aria-labelledby="security-heading">
                 <Security />
             </section>
@@ -169,6 +173,83 @@ pub(crate) fn security() -> Html {
                 <p class="has-text-centered">
                     <strong>{ "💡 Совет:" }</strong>
                     { " Для максимальной безопасности используйте on-premise версию KubCoin на своём сервере или VPS." }
+                </p>
+            </div>
+        </div>
+    }
+}
+
+#[function_component(Pricing)]
+pub(crate) fn pricing() -> Html {
+    html! {
+        <div class="container">
+            <h2 id="pricing-heading" class="title is-2 has-text-centered">{ "Тарифы" }</h2>
+            <p class="subtitle has-text-centered has-text-grey">{ "Выберите подходящий план" }</p>
+
+            <div class="columns is-centered" style="margin-top: 2rem;">
+                <div class="column is-half-tablet is-one-third-desktop">
+                    <div class="box" style="border: 2px solid #48c774;">
+                        <div class="has-text-centered">
+                            <span class="icon is-large" style="font-size: 3rem;">{ "🆓" }</span>
+                            <h3 class="title is-3">{ "Бесплатный" }</h3>
+                            <p class="title is-4 has-text-success">{ "0 ₽" }</p>
+                            <p class="subtitle is-6 has-text-grey">{ "навсегда" }</p>
+                        </div>
+
+                        <div class="content">
+                            <ul style="list-style: none; padding-left: 0;">
+                                <li>{ "✅ Неограниченные операции" }</li>
+                                <li>{ "✅ Все основные функции" }</li>
+                                <li>{ "✅ Базовая аналитика" }</li>
+                                <li>{ "✅ Категории расходов" }</li>
+                                <li>{ "✅ Математические выражения" }</li>
+                                <li>{ "✅ AI распознавание текста" }</li>
+                                <li>{ "✅ Месячные отчёты" }</li>
+                                <li>{ "✅ Поддержка сообщества" }</li>
+                            </ul>
+                        </div>
+
+                        <button::Start />
+                    </div>
+                </div>
+
+                <div class="column is-half-tablet is-one-third-desktop">
+                    <div class="box" style="border: 2px solid #3273dc; position: relative;">
+                        <span class="tag is-primary" style="position: absolute; top: -10px; right: 20px;">{ "Скоро" }</span>
+                        <div class="has-text-centered">
+                            <span class="icon is-large" style="font-size: 3rem;">{ "⭐" }</span>
+                            <h3 class="title is-3">{ "Premium" }</h3>
+                            <p class="title is-4 has-text-primary">{ "299 ₽" }</p>
+                            <p class="subtitle is-6 has-text-grey">{ "в месяц" }</p>
+                        </div>
+
+                        <div class="content">
+                            <p><strong>{ "Всё из бесплатного, плюс:" }</strong></p>
+                            <ul style="list-style: none; padding-left: 0;">
+                                <li>{ "✅ Расширенная аналитика" }</li>
+                                <li>{ "✅ Экспорт в Excel/CSV" }</li>
+                                <li>{ "✅ Графики и визуализация" }</li>
+                                <li>{ "✅ Планирование бюджета" }</li>
+                                <li>{ "✅ Множественные валюты" }</li>
+                                <li>{ "✅ Цели и накопления" }</li>
+                                <li>{ "✅ Приоритетная поддержка" }</li>
+                                <li>{ "✅ Расширенные backup" }</li>
+                            </ul>
+                        </div>
+
+                        <button class="button is-primary is-fullwidth" disabled=true>
+                            { "В разработке" }
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notification is-warning is-light" style="margin-top: 2rem;">
+                <p class="has-text-centered">
+                    <strong>{ "💼 Enterprise:" }</strong>
+                    { " Нужно on-premise решение для команды или компании? " }
+                    <a href="https://t.me/itmagelab_ru_group" target="_blank" rel="noopener noreferrer">{ "Свяжитесь с нами" }</a>
+                    { " для индивидуального предложения." }
                 </p>
             </div>
         </div>
