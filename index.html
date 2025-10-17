@@ -158,8 +158,9 @@
                 display: none;
                 padding: 1rem;
                 border-left: 3px solid #3273dc; /* синий акцент */
-                background-color: #f9f9f9;
+                background-color: #f5f5f5;
                 border-radius: 6px;
+                color: #363636;
             }
             .faq-item.is-active .faq-answer {
                 display: block;
@@ -196,8 +197,15 @@
 
             /* Focus indicators for accessibility */
             *:focus {
-                outline: 2px solid #3273dc;
-                outline-offset: 2px;
+                outline: 3px solid #2366d1;
+                outline-offset: 3px;
+            }
+
+            a:focus,
+            button:focus {
+                outline: 3px solid #2366d1;
+                outline-offset: 3px;
+                box-shadow: 0 0 0 3px rgba(35, 102, 209, 0.25);
             }
 
             /* Skip to main content link for accessibility */
@@ -215,6 +223,8 @@
                 left: 50%;
                 transform: translateX(-50%);
                 top: 0;
+                outline: 3px solid #ffffff;
+                outline-offset: 2px;
             }
 
             /* Smooth animations for UX */
@@ -246,6 +256,86 @@
 
             .is-loading {
                 animation: pulse 1.5s ease-in-out infinite;
+            }
+
+            /* Mobile improvements */
+            @media screen and (max-width: 768px) {
+                /* Better touch targets */
+                .button,
+                a.button {
+                    min-height: 44px;
+                    min-width: 44px;
+                    padding: 0.75rem 1.5rem;
+                }
+
+                /* Larger text for readability */
+                .title.is-1 {
+                    font-size: 2rem;
+                }
+
+                .subtitle.is-3 {
+                    font-size: 1.25rem;
+                }
+
+                /* Better spacing */
+                .box {
+                    padding: 1.5rem;
+                }
+
+                .section {
+                    padding: 2rem 1.5rem;
+                }
+
+                /* Optimize images */
+                .phone-fade {
+                    max-width: 100% !important;
+                }
+
+                /* Stack buttons vertically on mobile */
+                .buttons {
+                    flex-direction: column;
+                    align-items: stretch;
+                }
+
+                .buttons .button {
+                    width: 100%;
+                    margin-bottom: 0.5rem;
+                }
+
+                /* Better chat dialog layout */
+                .block .box {
+                    max-width: 80% !important;
+                }
+            }
+
+            /* Tablet improvements */
+            @media screen and (min-width: 769px) and (max-width: 1023px) {
+                .phone-fade {
+                    max-width: 350px !important;
+                }
+            }
+
+            /* Reduce motion for users who prefer it */
+            @media (prefers-reduced-motion: reduce) {
+                *,
+                *::before,
+                *::after {
+                    animation-duration: 0.01ms !important;
+                    animation-iteration-count: 1 !important;
+                    transition-duration: 0.01ms !important;
+                    scroll-behavior: auto !important;
+                }
+            }
+
+            /* High contrast mode support */
+            @media (prefers-contrast: high) {
+                .box {
+                    border: 2px solid currentColor;
+                }
+
+                .button {
+                    border-width: 2px;
+                }
             }
         </style>
     </head>

@@ -26,7 +26,7 @@ pub(crate) fn header() -> Html {
 
                 <div class="column is-full-mobile is-half-tablet">
                   <figure class="image phone-fade" style="max-width: 300px; margin: 0 auto;">
-                    <img src="images/IMG_3089.JPG" alt="Скриншот интерфейса приложения KubCoin с примером управления финансами" />
+                    <img src="images/IMG_3089.JPG" alt="Скриншот интерфейса приложения KubCoin с примером управления финансами" loading="eager" />
                   </figure>
                 </div>
               </div>
