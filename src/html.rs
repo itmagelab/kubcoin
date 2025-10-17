@@ -13,7 +13,7 @@ pub(crate) fn header() -> Html {
                 <div class="column is-full-mobile is-half-tablet">
                   <div class="box">
                     <h1 class="title is-1 has-text-weight-bold">
-                                <span style="font-size: 1.2em;">{ "💰 " }</span>{ "KubCoin" }
+                                <span class="icon is-large"><i class="fas fa-coins"></i></span>{ "KubCoin" }
                     </h1>
                   <h2 class="subtitle is-3 has-text-grey">{ "Ваш умный финансовый помощник" }</h2>
                   </div>
