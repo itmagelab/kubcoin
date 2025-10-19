@@ -1,0 +1,215 @@
+# KubCoin
+
+[English](#english) | [Русский](#russian)
+
+---
+
+<a name="english"></a>
+
+## 🚀 Your Smart Financial Assistant in Telegram
+
+### Slogan
+**Take Control of Your Money with AI-Powered Simplicity**
+
+### Short Description
+KubCoin is an intelligent Telegram bot that transforms personal finance management into a seamless experience. Track expenses, analyze spending patterns, and manage your budget—all through natural conversation, powered by AI.
+
+### Full Description
+
+KubCoin is a modern financial management solution designed for people who value simplicity and efficiency. Built as a Telegram bot, it eliminates the complexity of traditional finance apps by allowing you to manage your money through simple text or voice messages.
+
+The bot understands natural language, so you can just tell it about your expenses as you would tell a friend: "Bought coffee for $5" or simply "-5 coffee". KubCoin's AI engine processes your input, categorizes transactions automatically, and maintains a comprehensive financial journal.
+
+Whether you're tracking daily expenses, planning a budget, or analyzing spending patterns, KubCoin provides detailed reports and analytics that help you make informed financial decisions. The bot runs in Telegram, meaning your financial assistant is always just a message away—no app installations, no complex interfaces, just straightforward money management.
+
+For privacy-conscious users, KubCoin offers self-hosting options, giving you complete control over your financial data while maintaining the convenience of cloud-based access.
+
+---
+
+## ✨ Features
+
+### Core Functionality
+- **Quick Expense Tracking** — Record transactions in seconds with simple syntax like `-1540 Food // Lunch`
+- **Natural Language Processing** — Tell the bot about expenses in plain language: "Spent 50 on groceries"
+- **Voice Message Support** — Speak your transactions, and AI will understand and record them
+- **Smart Categorization** — Automatic expense categorization with learning capabilities
+- **Comprehensive Reports** — Detailed analytics and statistics with `/report` command
+- **Budget Management** — Track income and expenses across multiple categories
+- **Flexible Input Formats** — Multiple ways to record transactions for maximum convenience
+
+### Advanced Capabilities
+- **AI Integration** — GPT-powered natural language understanding for complex queries
+- **Repeating Transactions** — Quick repeat of previous operations with `!` command
+- **Multi-User Support** — Manage finances for family or small teams
+- **Custom Categories** — Create and manage your own expense categories
+- **Transaction History** — Complete searchable history of all operations
+
+### User Experience
+- **Intuitive Interface** — No learning curve, just start chatting
+- **Instant Feedback** — Real-time confirmation and error handling
+- **Mobile-First Design** — Optimized for Telegram's mobile experience
+- **Multilingual Support** — Available in multiple languages
+- **24/7 Availability** — Your financial assistant never sleeps
+
+---
+
+## 🎯 Benefits
+
+### For Users
+- **Save Time** — No more manual spreadsheets or complex finance apps
+- **Stay Organized** — All your financial data in one place, always accessible
+- **Make Better Decisions** — Clear insights into spending patterns and trends
+- **Reduce Stress** — Automated tracking means no forgotten expenses
+- **Privacy First** — Self-hosting option for complete data control
+- **Always Available** — Access from any device with Telegram
+- **No Learning Curve** — If you can chat, you can use KubCoin
+
+### Technical Advantages
+- **Modern Technology Stack** — Built with cutting-edge Rust + WebAssembly
+- **High Performance** — Lightning-fast response times with WASM compilation
+- **Type Safety** — Rust's type system ensures reliability and security
+- **SEO Optimized** — Proper meta tags for discoverability
+- **Self-Hosting Ready** — Deploy on your own infrastructure
+- **Open Architecture** — Extensible and maintainable codebase
+- **Professional Development** — Created by experienced SRE engineer with 15+ years
+
+### Security & Privacy
+- **Data Sovereignty** — Host it yourself to maintain full control
+- **Secure Communication** — All data transmitted through Telegram's encryption
+- **No Third-Party Tracking** — Your financial data stays private
+- **Transparent Operation** — Open development process and documentation
+
+---
+
+## 🌐 Links
+
+- **Bot**: [@kubcoin_bot](https://t.me/kubcoin_bot)
+- **Community**: [Telegram Group](https://t.me/itmagelab_ru_group)
+- **Updates**: [Telegram Channel](https://t.me/itmagelab_ru)
+- **Website**: [kubcoin.ru](https://kubcoin.ru)
+
+---
+
+## 📊 About This Landing Page
+
+This landing page is built with:
+- **Rust** (edition 2024) — Systems programming language
+- **Yew** — React-like framework for Rust
+- **WebAssembly** — Fast, secure web compilation target
+- **Bulma CSS** — Modern responsive framework
+
+The site demonstrates modern web development practices with type-safe, high-performance code compiled to WASM for optimal browser execution.
+
+---
+
+<a name="russian"></a>
+
+## 🚀 Ваш Умный Финансовый Помощник в Telegram
+
+### Слоган
+**Управляй Деньгами с Простотой, Усиленной ИИ**
+
+### Короткое Описание
+KubCoin — это интеллектуальный Telegram-бот, который превращает управление личными финансами в простой и естественный процесс. Отслеживайте расходы, анализируйте траты и управляйте бюджетом через обычный диалог с помощью искусственного интеллекта.
+
+### Полное Описание
+
+KubCoin — это современное решение для управления финансами, созданное для людей, ценящих простоту и эффективность. Реализованный как Telegram-бот, он устраняет сложность традиционных финансовых приложений, позволяя управлять деньгами через простые текстовые или голосовые сообщения.
+
+Бот понимает естественный язык, поэтому вы можете просто рассказать ему о своих расходах так, как рассказали бы другу: "Купил кофе за 150 рублей" или просто "-150 кофе". ИИ-движок KubCoin обрабатывает ввод, автоматически категоризирует транзакции и ведёт полный финансовый журнал.
+
+Независимо от того, отслеживаете ли вы ежедневные расходы, планируете бюджет или анализируете паттерны трат, KubCoin предоставляет детальные отчёты и аналитику, помогающие принимать обоснованные финансовые решения. Бот работает в Telegram, что означает — ваш финансовый помощник всегда на расстоянии одного сообщения. Никаких установок приложений, никаких сложных интерфейсов, только прямое управление деньгами.
+
+Для пользователей, заботящихся о приватности, KubCoin предлагает возможность самостоятельного хостинга, давая полный контроль над финансовыми данными при сохранении удобства облачного доступа.
+
+---
+
+## ✨ Возможности
+
+### Основной Функционал
+- **Быстрый Учёт Расходов** — Записывайте транзакции за секунды с простым синтаксисом `-1540 Еда // Обед`
+- **Обработка Естественного Языка** — Рассказывайте боту о расходах обычными словами: "Потратил 500 на продукты"
+- **Поддержка Голосовых Сообщений** — Диктуйте транзакции, и ИИ поймёт и запишет их
+- **Умная Категоризация** — Автоматическое распределение расходов по категориям с обучением
+- **Подробные Отчёты** — Детальная аналитика и статистика командой `/report`
+- **Управление Бюджетом** — Отслеживание доходов и расходов по множеству категорий
+- **Гибкие Форматы Ввода** — Несколько способов записи транзакций для максимального удобства
+
+### Продвинутые Возможности
+- **ИИ-Интеграция** — Понимание естественного языка на основе GPT для сложных запросов
+- **Повторяющиеся Транзакции** — Быстрый повтор предыдущих операций командой `!`
+- **Поддержка Нескольких Пользователей** — Управление финансами семьи или малых команд
+- **Пользовательские Категории** — Создание и управление собственными категориями расходов
+- **История Транзакций** — Полная история всех операций с поиском
+
+### Пользовательский Опыт
+- **Интуитивный Интерфейс** — Без обучения, просто начните общаться
+- **Мгновенная Обратная Связь** — Подтверждение и обработка ошибок в реальном времени
+- **Mobile-First Дизайн** — Оптимизирован для мобильного Telegram
+- **Многоязычность** — Доступен на нескольких языках
+- **Доступность 24/7** — Ваш финансовый помощник никогда не спит
+
+---
+
+## 🎯 Преимущества
+
+### Для Пользователей
+- **Экономия Времени** — Никаких ручных таблиц или сложных финансовых приложений
+- **Организованность** — Все финансовые данные в одном месте, всегда доступны
+- **Лучшие Решения** — Ясное понимание паттернов расходов и трендов
+- **Меньше Стресса** — Автоматическое отслеживание означает отсутствие забытых расходов
+- **Приватность Прежде Всего** — Возможность self-hosting для полного контроля данных
+- **Всегда Под Рукой** — Доступ с любого устройства с Telegram
+- **Без Обучения** — Если умеете общаться в чате, умеете пользоваться KubCoin
+
+### Технические Преимущества
+- **Современный Технологический Стек** — Построен на передовых Rust + WebAssembly
+- **Высокая Производительность** — Молниеносная скорость отклика благодаря WASM
+- **Типобезопасность** — Система типов Rust обеспечивает надёжность и безопасность
+- **SEO Оптимизация** — Правильные мета-теги для обнаружения поисковиками
+- **Готовность к Self-Hosting** — Развёртывание на собственной инфраструктуре
+- **Открытая Архитектура** — Расширяемая и поддерживаемая кодовая база
+- **Профессиональная Разработка** — Создан опытным SRE-инженером с 15+ летним стажем
+
+### Безопасность и Приватность
+- **Суверенитет Данных** — Размещайте сами для сохранения полного контроля
+- **Безопасная Коммуникация** — Все данные передаются через шифрование Telegram
+- **Без Сторонней Аналитики** — Ваши финансовые данные остаются приватными
+- **Прозрачная Работа** — Открытый процесс разработки и документация
+
+---
+
+## 🌐 Ссылки
+
+- **Бот**: [@kubcoin_bot](https://t.me/kubcoin_bot)
+- **Сообщество**: [Telegram Группа](https://t.me/itmagelab_ru_group)
+- **Новости**: [Telegram Канал](https://t.me/itmagelab_ru)
+- **Сайт**: [kubcoin.ru](https://kubcoin.ru)
+
+---
+
+## 📊 Об Этом Лендинге
+
+Эта посадочная страница создана с использованием:
+- **Rust** (edition 2024) — Язык системного программирования
+- **Yew** — React-подобный фреймворк для Rust
+- **WebAssembly** — Быстрая и безопасная веб-компиляция
+- **Bulma CSS** — Современный адаптивный фреймворк
+
+Сайт демонстрирует современные практики веб-разработки с типобезопасным высокопроизводительным кодом, скомпилированным в WASM для оптимального выполнения в браузере.
+
+---
+
+## 📄 License
+
+Copyright © iTmageLAB
+
+---
+
+## 🤝 Contributing
+
+See [conventions.md](doc/conventions.md) and [workflow.md](doc/workflow.md) for development guidelines.
+
+---
+
+**Made with ❤️ and 🦀 Rust**
