@@ -28,7 +28,7 @@ pub(crate) fn navbar() -> Html {
     };
 
     html! {
-        <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation" style="background-color: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); z-index: 30;">
+        <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation" style="box-shadow: 0 2px 4px rgba(0,0,0,0.3); z-index: 30;">
             <div class="container">
                 <div class="navbar-brand">
                     <a class="navbar-item" href="/" style="font-weight: bold; font-size: 1.25rem;">
