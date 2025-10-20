@@ -1,9 +1,7 @@
 mod button;
 mod language_switcher;
-mod navbar;
 
 pub(crate) use language_switcher::LanguageSwitcher;
-pub(crate) use navbar::Navbar;
 
 use yew::prelude::*;
 
@@ -16,26 +14,31 @@ pub(crate) fn header() -> Html {
 
     html! {
         <header role="banner">
-            <div class="container has-text-centered">
-              <div class="columns is-vcentered is-multiline">
-                <div class="column is-full-mobile is-half-tablet">
-                  <div class="box">
-                    <h1 class="title is-1 has-text-weight-bold">
-                      <span class="icon is-large"><i class="fas fa-coins"></i></span>{ "KubCoin" }
-                    </h1>
-                    <h2 class="subtitle is-3 has-text-grey">{ &t.subtitle }</h2>
+            <div class="container">
+              <div style="display: flex; justify-content: flex-end; padding: 1rem 0;">
+                <LanguageSwitcher />
+              </div>
+              <div class="has-text-centered">
+                <div class="columns is-vcentered is-multiline">
+                  <div class="column is-full-mobile is-half-tablet">
+                    <div class="box">
+                      <h1 class="title is-1 has-text-weight-bold">
+                        <span class="icon is-large"><i class="fas fa-coins"></i></span>{ "KubCoin" }
+                      </h1>
+                      <h2 class="subtitle is-3 has-text-grey">{ &t.subtitle }</h2>
+                    </div>
+                    <nav class="buttons" aria-label={ t.aria_main_actions.clone() }>
+                        <button::Start />
+                        <button::Group />
+                        <button::Channel />
+                    </nav>
                   </div>
-                  <nav class="buttons" aria-label={ t.aria_main_actions.clone() }>
-                      <button::Start />
-                      <button::Group />
-                      <button::Channel />
-                  </nav>
-                </div>
 
-                <div class="column is-full-mobile is-half-tablet">
-                  <figure class="image phone-fade" style="max-width: 300px; margin: 0 auto;">
-                    <img src="images/IMG_3089.JPG" alt={ t.img_alt_screenshot.clone() } loading="eager" />
-                  </figure>
+                  <div class="column is-full-mobile is-half-tablet">
+                    <figure class="image phone-fade" style="max-width: 300px; margin: 0 auto;">
+                      <img src="images/IMG_3089.JPG" alt={ t.img_alt_screenshot.clone() } loading="eager" />
+                    </figure>
+                  </div>
                 </div>
               </div>
             </div>
