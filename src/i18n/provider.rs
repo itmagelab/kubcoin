@@ -85,6 +85,7 @@ pub(crate) fn use_language() -> LanguageContext {
 }
 
 /// Save language preference to LocalStorage
+#[allow(unused_variables)]
 fn save_to_storage(lang: Language) {
     #[cfg(target_arch = "wasm32")]
     {
@@ -108,9 +109,14 @@ fn load_from_storage() -> Option<Language> {
         if let Some(window) = web_sys::window() {
             if let Ok(Some(storage)) = window.local_storage() {
                 if let Ok(Some(lang_code)) = storage.get_item(STORAGE_KEY) {
-                    if let Some(lang) = Language::from_code(&lang_code) {
-                        tracing::info!("Loaded language from storage: {}", lang);
-                        return Some(lang);
+                    let lang = match lang_code.as_str() {
+                        "ru" => Some(Language::Russian),
+                        "en" => Some(Language::English),
+                        _ => None,
+                    };
+                    if let Some(detected_lang) = lang {
+                        tracing::info!("Loaded language from storage: {}", detected_lang);
+                        return Some(detected_lang);
                     }
                 }
             }
@@ -120,6 +126,7 @@ fn load_from_storage() -> Option<Language> {
 }
 
 /// Update HTML lang attribute
+#[allow(unused_variables)]
 fn update_html_lang(lang: Language) {
     #[cfg(target_arch = "wasm32")]
     {

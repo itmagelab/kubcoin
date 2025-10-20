@@ -8,9 +8,6 @@ pub(crate) mod provider;
 pub(crate) mod types;
 
 // Re-export commonly used items
-pub(crate) use content::{
-    ChatTranslation, DialogTranslation, FeatureTranslation, FooterTranslations, HeaderTranslations,
-    I18nContent, QATranslation, SecurityTranslation, UITranslations, load_translations,
-};
+pub(crate) use content::ChatTranslation;
 pub(crate) use provider::{LanguageProvider, use_language};
 pub(crate) use types::Language;

@@ -1,4 +1,3 @@
-mod handler;
 mod html;
 mod i18n;
 

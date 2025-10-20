@@ -21,45 +21,24 @@ impl Language {
         }
     }
 
-    /// Get language name in its native form
-    pub(crate) fn native_name(&self) -> &'static str {
-        match self {
-            Language::Russian => "Русский",
-            Language::English => "English",
-        }
-    }
-
-    /// Get language flag emoji
-    pub(crate) fn flag(&self) -> &'static str {
-        match self {
-            Language::Russian => "🇷🇺",
-            Language::English => "🇬🇧",
-        }
-    }
-
-    /// Parse language from string code
-    pub(crate) fn from_code(code: &str) -> Option<Self> {
-        match code.to_lowercase().as_str() {
-            "ru" | "rus" | "russian" => Some(Language::Russian),
-            "en" | "eng" | "english" => Some(Language::English),
-            _ => None,
-        }
-    }
-
-    /// Get all supported languages
-    pub(crate) fn all() -> &'static [Language] {
-        &[Language::Russian, Language::English]
-    }
-
     /// Detect language from browser
     pub(crate) fn from_browser() -> Self {
         #[cfg(target_arch = "wasm32")]
         {
             if let Some(window) = web_sys::window() {
                 if let Some(navigator_lang) = window.navigator().language() {
-                    if let Some(lang) = Self::from_code(&navigator_lang) {
-                        tracing::info!("Detected browser language: {}", lang);
-                        return lang;
+                    let lang_code = navigator_lang.to_lowercase();
+                    let lang = if lang_code.starts_with("en") {
+                        Some(Language::English)
+                    } else if lang_code.starts_with("ru") {
+                        Some(Language::Russian)
+                    } else {
+                        None
+                    };
+
+                    if let Some(detected_lang) = lang {
+                        tracing::info!("Detected browser language: {}", detected_lang);
+                        return detected_lang;
                     }
                 }
             }
@@ -83,42 +62,14 @@ impl fmt::Display for Language {
     }
 }
 
-/// Wrapper type for translations content
-pub(crate) type Translations = super::content::I18nContent;
-
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
-    fn test_language_code() {
-        assert_eq!(Language::Russian.code(), "ru");
-        assert_eq!(Language::English.code(), "en");
-    }
-
-    #[test]
-    fn test_language_from_code() {
-        assert_eq!(Language::from_code("ru"), Some(Language::Russian));
-        assert_eq!(Language::from_code("en"), Some(Language::English));
-        assert_eq!(Language::from_code("RU"), Some(Language::Russian));
-        assert_eq!(Language::from_code("EN"), Some(Language::English));
-        assert_eq!(Language::from_code("rus"), Some(Language::Russian));
-        assert_eq!(Language::from_code("english"), Some(Language::English));
-        assert_eq!(Language::from_code("unknown"), None);
-    }
-
-    #[test]
     fn test_language_display() {
         assert_eq!(format!("{}", Language::Russian), "ru");
         assert_eq!(format!("{}", Language::English), "en");
-    }
-
-    #[test]
-    fn test_language_all() {
-        let langs = Language::all();
-        assert_eq!(langs.len(), 2);
-        assert!(langs.contains(&Language::Russian));
-        assert!(langs.contains(&Language::English));
     }
 
     #[test]
