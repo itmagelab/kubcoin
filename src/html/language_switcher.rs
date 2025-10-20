@@ -38,12 +38,13 @@ pub(crate) fn language_switcher() -> Html {
     };
 
     html! {
-        <div class="buttons has-addons" style="margin-bottom: 0;">
+        <div class="buttons has-addons is-small" style="margin-bottom: 0; display: flex; flex-direction: row;">
             <button
                 class={en_class}
                 onclick={switch_to_english}
                 aria-label="Switch to English"
                 aria-pressed={if current_lang == Language::English { "true" } else { "false" }}
+                style="min-width: auto;"
             >
                 { "Eng" }
             </button>
@@ -52,6 +53,7 @@ pub(crate) fn language_switcher() -> Html {
                 onclick={switch_to_russian}
                 aria-label="Переключить на русский"
                 aria-pressed={if current_lang == Language::Russian { "true" } else { "false" }}
+                style="min-width: auto;"
             >
                 { "Ru" }
             </button>
