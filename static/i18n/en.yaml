@@ -23,7 +23,7 @@ ui:
   pricing_free_price: "$0"
   pricing_free_period: "forever"
   pricing_premium_title: "Premium"
-  pricing_premium_price: "$2"
+  pricing_premium_price: "$2.99"
   pricing_premium_period: "per month"
   pricing_premium_coming_soon: "Coming Soon"
   pricing_premium_in_development: "In Development"
