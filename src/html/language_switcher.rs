@@ -26,13 +26,13 @@ pub(crate) fn language_switcher() -> Html {
     };
 
     let ru_class = if current_lang == Language::Russian {
-        "button is-small is-info"
+        "button is-small is-primary"
     } else {
         "button is-small is-light"
     };
 
     let en_class = if current_lang == Language::English {
-        "button is-small is-info"
+        "button is-small is-primary"
     } else {
         "button is-small is-light"
     };
