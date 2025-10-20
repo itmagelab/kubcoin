@@ -1,4 +1,7 @@
 mod button;
+mod language_switcher;
+
+pub(crate) use language_switcher::LanguageSwitcher;
 
 use yew::prelude::*;
 

@@ -1,5 +1,6 @@
 mod handler;
 mod html;
+mod i18n;
 
 use tracing_subscriber::{
     fmt::format::{FmtSpan, Pretty},
@@ -14,6 +15,15 @@ use yew::prelude::*;
 
 #[function_component(App)]
 fn app() -> Html {
+    html! {
+        <i18n::LanguageProvider>
+            <AppContent />
+        </i18n::LanguageProvider>
+    }
+}
+
+#[function_component(AppContent)]
+fn app_content() -> Html {
     html! {
         <>
         <section class="hero">

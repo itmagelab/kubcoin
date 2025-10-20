@@ -1,0 +1,177 @@
+---
+header:
+  title: "KubCoin — Smart Assistant for Financial Management"
+  subtitle: "Track expenses, plan budget, and analyze spending right in Telegram"
+  cta_button: "Start Bot"
+
+ui:
+  start_bot: "Start Bot"
+  join_group: "Join Group"
+  join_channel: "Subscribe to Channel"
+  learn_more: "Learn More"
+  features_section_title: "Features"
+  chats_section_title: "Usage Examples"
+  security_section_title: "Security and Privacy"
+  faq_section_title: "Frequently Asked Questions"
+
+features:
+  - icon: "🤖"
+    title: "AI Assistant"
+    description: "Understands natural language and voice messages. Just say what you spent — the bot will figure it out."
+  - icon: "📊"
+    title: "Analytics"
+    description: "Detailed reports by categories, months, and periods. See where your money goes."
+  - icon: "🔐"
+    title: "Security"
+    description: "Built with Rust for maximum reliability. On-premise support for full data control."
+  - icon: "⚡"
+    title: "Quick Tracking"
+    description: "Add transactions in seconds. Math expressions, last operation repeat — everything for your convenience."
+  - icon: "👥"
+    title: "Shared Budget"
+    description: "Use the bot in groups for managing family or project budgets together."
+  - icon: "🎯"
+    title: "Categories"
+    description: "Automatic expense categorization. Flexible setup of your own categories."
+
+security:
+  - icon: "🔒"
+    title: "Data Protection"
+    description: "Your financial data is securely protected. No one but you has access to your transactions."
+  - icon: "🏠"
+    title: "On-premise Solution"
+    description: "Want full control? Deploy KubCoin on your own server. Your data stays only with you — no clouds, no third parties."
+  - icon: "🦀"
+    title: "Built with Rust"
+    description: "Rust guarantees memory safety and absence of code-level vulnerabilities. The same language used in critical systems and blockchain projects."
+  - icon: "🚫"
+    title: "No Personal Data"
+    description: "We don't require email, passwords, or other personal information. Only Telegram ID for identification."
+  - icon: "🔄"
+    title: "Backups"
+    description: "Automatic backup creation. Your data will never be lost."
+  - icon: "✅"
+    title: "Open Source"
+    description: "Source code opening is planned. You'll be able to verify security yourself and contribute improvements."
+
+chats:
+  - title: "Add Your Expenses"
+    subtitle: "KubCoin will add the transaction to database"
+    dialogs:
+      - req: "/start"
+        res: |
+          ✅ All set!
+
+          Now you can add records, make changes, and keep track together! 🚀
+
+          🔧 Command examples:
+          -100 food // grocery shopping
+          1000-560 work
+          -1500 other or just -1500
+          100+150-10 or $ 100/3 + 500 - (123+67)
+          /report or /report 5 — report for current or 5th month
+
+          Type /help to learn more about available commands and bot features.
+      - req: "-1540 Food // Lunch"
+        res: |
+          📆 Day/Month: $450 / $100350
+          ( -1540 Food )
+
+          ✓✅ Transaction added!
+          Identifier: 358f9cb4
+          Checksum: 689aa259
+  - title: "Use Shortcuts"
+    subtitle: "KubCoin can repeat the last transaction using `!`"
+    dialogs:
+      - req: "!"
+        res: |
+          📆 Day/Month: -$1090 / $98810
+          ( -1540 Food )
+
+          ✓✅ Transaction added!
+          Identifier: c70ee2a9
+          Checksum: 0fb31b86
+      - req: "-500"
+        res: |
+          📆 Day/Month: -$1590 / $98310
+          ( -500 Food )
+
+          ✓✅ Transaction added!
+          Identifier: 81cac754
+          Checksum: c3a507a1
+  - title: "Generate Monthly Report"
+    subtitle: "KubCoin can generate reports by months and dates"
+    dialogs:
+      - req: "/report"
+        res: |
+          📈 Income for 10/2025
+          Work: $440
+          Salary: $10000
+          ---
+
+          Total: $10440
+
+          📉 Expenses for 10/2025
+          Food: $1600
+          Other: $1500
+          ---
+
+          Total: $3100
+
+          Balance: $7340
+  - title: "Use AI for Transactions"
+    subtitle: "KubCoin can analyze text and voice messages"
+    dialogs:
+      - req: "# Lena bought flowers from me for 1000 dollars"
+        res: |
+          📆 Day/Month: $1000 / $1000
+          ( +1000 Other )
+
+          ✓✅ Transaction added!
+          Identifier: d9b710cd
+          Checksum: faf35c78
+      - req: "< VOICE MESSAGE >"
+        res: |
+          📆 Day/Month: $2000 / $2000
+          ( +1000 Other )
+
+          ✓✅ Transaction added!
+          Identifier: b776a48b
+          Checksum: f7da958d
+
+qa:
+  - question: "What is KubCoin?"
+    answer: "KubCoin is a smart assistant for personal finance management. It helps control expenses, plan budget, and analyze spending."
+  - question: "Can I run KubCoin on my own server?"
+    answer: "Yes! You can deploy KubCoin locally (on-premise) and fully control data storage. Your privacy is in your hands only."
+  - question: "Who develops KubCoin?"
+    answer: |
+      I develop KubCoin alone. I have over 15 years of experience as an SRE engineer.
+      The project is written in Rust — a safe and high-performance language often used in cryptocurrency projects.
+      Rust ensures reliability, protection from memory errors, and stable operation even under high load.
+  - question: "How to start using KubCoin?"
+    answer: "Just open the bot in Telegram and send the /start command. The bot will guide you through simple registration and will be ready to work immediately. No complicated settings!"
+  - question: "Is KubCoin free?"
+    answer: "Yes, the basic version of KubCoin is completely free. You can track income and expenses without limitations. A premium version with advanced analytics is planned for the future."
+  - question: "Is my data safe?"
+    answer: "Absolutely! KubCoin is written in Rust, which guarantees security at the code level. For the on-premise version, you fully control data storage."
+  - question: "What currencies does the bot support?"
+    answer: "Currently, the bot works with rubles (₽), but support for multiple currencies is planned, including dollars, euros, and cryptocurrencies."
+  - question: "How does the bot understand voice messages?"
+    answer: "KubCoin uses AI for speech recognition and text analysis. Just send a voice message with the transaction description, and the bot will automatically create a record."
+  - question: "Is there a mobile app?"
+    answer: "KubCoin works directly in Telegram, so it doesn't require a separate app. It's convenient — everything in one place!"
+  - question: "Can the bot be used in groups?"
+    answer: "Yes! You can add KubCoin to a group for joint management of family or project budget. Each participant will be able to add transactions."
+  - question: "How often are updates released?"
+    answer: "The bot is actively being developed. New features are added regularly based on user feedback. Follow the news on our Telegram channel!"
+  - question: "Is registration required?"
+    answer: "Minimal. Just type /register in the bot once, and you're ready to go. No email, passwords, or personal data required."
+  - question: "What to do if the bot doesn't respond?"
+    answer: "Check your internet connection and try sending the /start command. If the problem persists, contact support via /support."
+
+footer:
+  copyright: "© 2025 KubCoin. All rights reserved."
+  developed_by: "Developed with ❤️ by iTmage"
+  privacy_policy: "Privacy Policy"
+  terms_of_service: "Terms of Service"
