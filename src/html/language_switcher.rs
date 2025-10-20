@@ -38,7 +38,7 @@ pub(crate) fn language_switcher() -> Html {
     };
 
     html! {
-        <div class="buttons has-addons is-small" style="margin-bottom: 0; display: flex; flex-direction: row;">
+        <div class="buttons has-addons is-small language-switcher" style="margin-bottom: 0;">
             <button
                 class={en_class}
                 onclick={switch_to_english}
