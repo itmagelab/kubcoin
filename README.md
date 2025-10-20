@@ -37,13 +37,13 @@ Traditional finance apps are often too complicated, require tedious data entry, 
 **Управляй Деньгами с Простотой, Усиленной ИИ**
 
 ### Short Description
-KubCoin is an intelligent Telegram bot that transforms personal finance management into a seamless experience. Track expenses, analyze spending patterns, and manage your budget—all through natural conversation, powered by AI.
+KubCoin is an intelligent Telegram bot that transforms personal finance management into a seamless experience. Track expenses with simple commands, analyze spending patterns, and manage your budget—all within Telegram.
 
 ### Full Description
 
-KubCoin is a modern financial management solution designed for people who value simplicity and efficiency. Built as a Telegram bot, it eliminates the complexity of traditional finance apps by allowing you to manage your money through simple text or voice messages.
+KubCoin is a modern financial management solution designed for people who value simplicity and efficiency. Built as a Telegram bot, it eliminates the complexity of traditional finance apps by allowing you to manage your money through simple text commands.
 
-The bot understands natural language, so you can just tell it about your expenses as you would tell a friend: "Bought coffee for $5" or simply "-5 coffee". KubCoin's AI engine processes your input, categorizes transactions automatically, and maintains a comprehensive financial journal.
+Record expenses quickly with intuitive syntax: simply "-5 coffee" or "-1540 Food // Lunch". KubCoin processes your input, categorizes transactions automatically, and maintains a comprehensive financial journal.
 
 Whether you're tracking daily expenses, planning a budget, or analyzing spending patterns, KubCoin provides detailed reports and analytics that help you make informed financial decisions. The bot runs in Telegram, meaning your financial assistant is always just a message away—no app installations, no complex interfaces, just straightforward money management.
 
@@ -55,15 +55,15 @@ For privacy-conscious users, KubCoin offers self-hosting options, giving you com
 
 ### Core Functionality
 - **Quick Expense Tracking** — Record transactions in seconds with simple syntax like `-1540 Food // Lunch`
-- **Natural Language Processing** — Tell the bot about expenses in plain language: "Spent 50 on groceries"
-- **Voice Message Support** — Speak your transactions, and AI will understand and record them
+- **Natural Language Processing** — Tell the bot about expenses in plain language: "Spent 50 on groceries" (Premium subscription feature)
+- **Voice Message Support** — Speak your transactions, and AI will understand and record them (Premium subscription feature)
 - **Smart Categorization** — Automatic expense categorization with learning capabilities
 - **Comprehensive Reports** — Detailed analytics and statistics with `/report` command
 - **Budget Management** — Track income and expenses across multiple categories
 - **Flexible Input Formats** — Multiple ways to record transactions for maximum convenience
 
 ### Advanced Capabilities
-- **AI Integration** — GPT-powered natural language understanding for complex queries
+- **AI Integration** — GPT-powered natural language understanding for complex queries (Premium subscription feature)
 - **Repeating Transactions** — Quick repeat of previous operations with `!` command
 - **Multi-User Support** — Manage finances for family or small teams
 - **Custom Categories** — Create and manage your own expense categories
@@ -145,21 +145,21 @@ KubCoin создан для всех, кто хочет контролирова
 
 ### Какую Проблему Решает
 Традиционные финансовые приложения часто слишком сложны, требуют утомительного ввода данных и запирают ваши данные в проприетарных системах. KubCoin решает это:
-- **Устраняя трение** — Записывайте расходы за секунды через естественный диалог
+- **Устраняя трение** — Записывайте расходы за секунды простыми командами
 - **Снимая барьеры** — Никаких установок приложений, работает прямо в Telegram
-- **Упрощая ввод** — Говорите или пишите естественно, никаких форм для заполнения
+- **Упрощая ввод** — Интуитивный синтаксис команд, никаких форм для заполнения
 - **Обеспечивая приватность** — Возможность self-hosting даёт полный контроль над данными
 - **Предоставляя ясность** — Понятные отчёты и аналитика без избыточной сложности
 - **Экономя время** — Автоматическая категоризация означает меньше ручной работы
 
 ### Короткое Описание
-KubCoin — это интеллектуальный Telegram-бот, который превращает управление личными финансами в простой и естественный процесс. Отслеживайте расходы, анализируйте траты и управляйте бюджетом через обычный диалог с помощью искусственного интеллекта.
+KubCoin — это интеллектуальный Telegram-бот, который превращает управление личными финансами в простой и естественный процесс. Отслеживайте расходы простыми командами, анализируйте траты и управляйте бюджетом прямо в Telegram.
 
 ### Полное Описание
 
-KubCoin — это современное решение для управления финансами, созданное для людей, ценящих простоту и эффективность. Реализованный как Telegram-бот, он устраняет сложность традиционных финансовых приложений, позволяя управлять деньгами через простые текстовые или голосовые сообщения.
+KubCoin — это современное решение для управления финансами, созданное для людей, ценящих простоту и эффективность. Реализованный как Telegram-бот, он устраняет сложность традиционных финансовых приложений, позволяя управлять деньгами через простые текстовые команды.
 
-Бот понимает естественный язык, поэтому вы можете просто рассказать ему о своих расходах так, как рассказали бы другу: "Купил кофе за 150 рублей" или просто "-150 кофе". ИИ-движок KubCoin обрабатывает ввод, автоматически категоризирует транзакции и ведёт полный финансовый журнал.
+Записывайте расходы быстро с помощью интуитивного синтаксиса: просто "-150 кофе" или "-1540 Еда // Обед". KubCoin обрабатывает ввод, автоматически категоризирует транзакции и ведёт полный финансовый журнал.
 
 Независимо от того, отслеживаете ли вы ежедневные расходы, планируете бюджет или анализируете паттерны трат, KubCoin предоставляет детальные отчёты и аналитику, помогающие принимать обоснованные финансовые решения. Бот работает в Telegram, что означает — ваш финансовый помощник всегда на расстоянии одного сообщения. Никаких установок приложений, никаких сложных интерфейсов, только прямое управление деньгами.
 
@@ -171,15 +171,15 @@ KubCoin — это современное решение для управлен
 
 ### Основной Функционал
 - **Быстрый Учёт Расходов** — Записывайте транзакции за секунды с простым синтаксисом `-1540 Еда // Обед`
-- **Обработка Естественного Языка** — Рассказывайте боту о расходах обычными словами: "Потратил 500 на продукты"
-- **Поддержка Голосовых Сообщений** — Диктуйте транзакции, и ИИ поймёт и запишет их
+- **Обработка Естественного Языка** — Рассказывайте боту о расходах обычными словами: "Потратил 500 на продукты" (Премиум подписка)
+- **Поддержка Голосовых Сообщений** — Диктуйте транзакции, и ИИ поймёт и запишет их (Премиум подписка)
 - **Умная Категоризация** — Автоматическое распределение расходов по категориям с обучением
 - **Подробные Отчёты** — Детальная аналитика и статистика командой `/report`
 - **Управление Бюджетом** — Отслеживание доходов и расходов по множеству категорий
 - **Гибкие Форматы Ввода** — Несколько способов записи транзакций для максимального удобства
 
 ### Продвинутые Возможности
-- **ИИ-Интеграция** — Понимание естественного языка на основе GPT для сложных запросов
+- **ИИ-Интеграция** — Понимание естественного языка на основе GPT для сложных запросов (Премиум подписка)
 - **Повторяющиеся Транзакции** — Быстрый повтор предыдущих операций командой `!`
 - **Поддержка Нескольких Пользователей** — Управление финансами семьи или малых команд
 - **Пользовательские Категории** — Создание и управление собственными категориями расходов
