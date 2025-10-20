@@ -3,11 +3,8 @@
 //! This module provides type-safe language switching and content loading
 //! with support for Russian and English languages.
 
-mod provider;
-mod types;
-
-pub(crate) use provider::{LanguageProvider, use_language};
-pub(crate) use types::Language;
+pub(crate) use crate::i18n_provider::{LanguageProvider, use_language};
+pub(crate) use crate::i18n_types::Language;
 
 use serde::Deserialize;
 
@@ -132,8 +129,8 @@ pub(crate) struct UITranslations {
 /// Load translations for a specific language
 pub(crate) fn load_translations(lang: Language) -> Result<I18nContent, String> {
     let content = match lang {
-        Language::Russian => include_str!("../../static/i18n/ru.yaml"),
-        Language::English => include_str!("../../static/i18n/en.yaml"),
+        Language::Russian => include_str!("../static/i18n/ru.yaml"),
+        Language::English => include_str!("../static/i18n/en.yaml"),
     };
 
     serde_yaml::from_str(content)

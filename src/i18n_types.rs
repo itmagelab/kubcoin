@@ -84,7 +84,7 @@ impl fmt::Display for Language {
 }
 
 /// Wrapper type for translations content
-pub(crate) type Translations = super::I18nContent;
+pub(crate) type Translations = crate::i18n::I18nContent;
 
 #[cfg(test)]
 mod tests {

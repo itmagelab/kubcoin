@@ -1,6 +1,8 @@
 mod handler;
 mod html;
 mod i18n;
+mod i18n_provider;
+mod i18n_types;
 
 use tracing_subscriber::{
     fmt::format::{FmtSpan, Pretty},
