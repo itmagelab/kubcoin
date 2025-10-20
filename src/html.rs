@@ -5,20 +5,26 @@ pub(crate) use language_switcher::LanguageSwitcher;
 
 use yew::prelude::*;
 
-use crate::handler::{ChatItem, get_content};
+use crate::i18n::use_language;
 
 #[function_component(Header)]
 pub(crate) fn header() -> Html {
+    let ctx = use_language();
+    let t = &ctx.translations.header;
+
     html! {
         <header role="banner">
             <div class="container has-text-centered">
               <div class="columns is-vcentered is-multiline">
                 <div class="column is-full-mobile is-half-tablet">
                   <div class="box">
-                    <h1 class="title is-1 has-text-weight-bold">
-                                <span class="icon is-large"><i class="fas fa-coins"></i></span>{ "KubCoin" }
-                    </h1>
-                  <h2 class="subtitle is-3 has-text-grey">{ "Ваш умный финансовый помощник" }</h2>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                      <h1 class="title is-1 has-text-weight-bold" style="margin: 0;">
+                        <span class="icon is-large"><i class="fas fa-coins"></i></span>{ "KubCoin" }
+                      </h1>
+                      <LanguageSwitcher />
+                    </div>
+                    <h2 class="subtitle is-3 has-text-grey">{ &t.subtitle }</h2>
                   </div>
                   <nav class="buttons" aria-label="Основные действия">
                       <button::Start />
@@ -79,15 +85,17 @@ pub(crate) fn split() -> Html {
 
 #[function_component(Features)]
 pub(crate) fn features() -> Html {
-    let content = get_content();
+    let ctx = use_language();
+    let features = &ctx.translations.features;
+    let ui = &ctx.translations.ui;
 
     html! {
         <div class="container">
-            <h2 id="features-heading" class="title is-2 has-text-centered">{ "Возможности" }</h2>
+            <h2 id="features-heading" class="title is-2 has-text-centered">{ &ui.features_section_title }</h2>
             <p class="subtitle has-text-centered has-text-grey">{ "Всё необходимое для управления финансами" }</p>
 
             <div class="columns is-multiline" style="margin-top: 2rem;">
-                { for content.features.iter().map(|feature| html! {
+                { for features.iter().map(|feature| html! {
                     <div class="column is-half-tablet is-one-third-desktop">
                         <div class="box has-text-centered" style="height: 100%;">
                             <span class="icon is-large" style="font-size: 3rem;">{ &feature.icon }</span>
@@ -103,15 +111,17 @@ pub(crate) fn features() -> Html {
 
 #[function_component(Security)]
 pub(crate) fn security() -> Html {
-    let content = get_content();
+    let ctx = use_language();
+    let security = &ctx.translations.security;
+    let ui = &ctx.translations.ui;
 
     html! {
         <div class="container">
-            <h2 id="security-heading" class="title is-2 has-text-centered">{ "Безопасность и приватность" }</h2>
+            <h2 id="security-heading" class="title is-2 has-text-centered">{ &ui.security_section_title }</h2>
             <p class="subtitle has-text-centered has-text-grey">{ "Ваши данные под надёжной защитой" }</p>
 
             <div class="columns is-multiline" style="margin-top: 2rem;">
-                { for content.security.iter().map(|item| html! {
+                { for security.iter().map(|item| html! {
                     <div class="column is-half">
                         <div class="content">
                             <h3 class="title is-4">{ format!("{} {}", &item.icon, &item.title) }</h3>
@@ -244,13 +254,15 @@ pub(crate) fn usage() -> Html {
 
 #[function_component(QA)]
 fn qa() -> Html {
-    let items = get_content().qa;
+    let ctx = use_language();
+    let items = &ctx.translations.qa;
+    let ui = &ctx.translations.ui;
 
     let open_index = use_state(|| None);
 
     html! {
         <div class="container">
-            <h2 id="faq-heading" class="title has-text-centered">{ "Часто задаваемые вопросы" }</h2>
+            <h2 id="faq-heading" class="title has-text-centered">{ &ui.faq_section_title }</h2>
             { for items.iter().enumerate().map(|(idx, item)| {
                 let is_open = *open_index == Some(idx);
                 let on_click = {
@@ -292,11 +304,14 @@ fn qa() -> Html {
 
 #[function_component(Chats)]
 pub(crate) fn chats() -> Html {
-    let content = get_content();
+    let ctx = use_language();
+    let chats = &ctx.translations.chats;
+    let ui = &ctx.translations.ui;
+
     html! {
         <>
-            <h2 id="examples-heading" class="title has-text-centered">{ "Примеры диалогов" }</h2>
-            { for content.chats.chunks(2).map(|pair| html! {
+            <h2 id="examples-heading" class="title has-text-centered">{ &ui.chats_section_title }</h2>
+            { for chats.chunks(2).map(|pair| html! {
                 <div class="columns is-multiline">
                     <div class="column">
                     </div>
@@ -313,7 +328,7 @@ pub(crate) fn chats() -> Html {
     }
 }
 
-pub(crate) fn chat(chat: &ChatItem) -> Html {
+pub(crate) fn chat(chat: &crate::i18n::ChatTranslation) -> Html {
     html! {
         <article class="container" style="border: 1px solid #ccc; padding: 1rem; border-radius: 8px;" role="article">
             <h3 class="title">{ &chat.title }</h3>
@@ -340,11 +355,17 @@ pub(crate) fn chat(chat: &ChatItem) -> Html {
 
 #[function_component(Footer)]
 pub(crate) fn footer() -> Html {
+    let ctx = use_language();
+    let footer = &ctx.translations.footer;
+
     html! {
         <footer class="footer" role="contentinfo">
             <div class="content has-text-centered">
                 <p>
-                    <small>{ "© 2025 iTmageLAB. All rights reserved." }</small>
+                    <small>{ &footer.copyright }</small>
+                </p>
+                <p>
+                    <small>{ &footer.developed_by }</small>
                 </p>
             </div>
         </footer>
