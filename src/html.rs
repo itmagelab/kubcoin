@@ -1,7 +1,9 @@
 mod button;
 mod language_switcher;
+mod navbar;
 
 pub(crate) use language_switcher::LanguageSwitcher;
+pub(crate) use navbar::Navbar;
 
 use yew::prelude::*;
 
@@ -18,12 +20,9 @@ pub(crate) fn header() -> Html {
               <div class="columns is-vcentered is-multiline">
                 <div class="column is-full-mobile is-half-tablet">
                   <div class="box">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                      <h1 class="title is-1 has-text-weight-bold" style="margin: 0;">
-                        <span class="icon is-large"><i class="fas fa-coins"></i></span>{ "KubCoin" }
-                      </h1>
-                      <LanguageSwitcher />
-                    </div>
+                    <h1 class="title is-1 has-text-weight-bold">
+                      <span class="icon is-large"><i class="fas fa-coins"></i></span>{ "KubCoin" }
+                    </h1>
                     <h2 class="subtitle is-3 has-text-grey">{ &t.subtitle }</h2>
                   </div>
                   <nav class="buttons" aria-label="Основные действия">

@@ -26,15 +26,18 @@ fn app() -> Html {
 fn app_content() -> Html {
     html! {
         <>
-        <section class="hero">
-            <div class="hero-body">
-                <html::Header />
-            </div>
-        </section>
-        <section class="section">
-            <html::Body />
-        </section>
-        <html::Footer />
+        <html::Navbar />
+        <div style="margin-top: 52px;">
+            <section class="hero">
+                <div class="hero-body">
+                    <html::Header />
+                </div>
+            </section>
+            <section class="section">
+                <html::Body />
+            </section>
+            <html::Footer />
+        </div>
         </>
     }
 }
