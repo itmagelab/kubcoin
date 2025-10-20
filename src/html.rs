@@ -27,10 +27,14 @@ pub(crate) fn header() -> Html {
                       </h1>
                       <h2 class="subtitle is-3 has-text-grey">{ &t.subtitle }</h2>
                     </div>
-                    <nav class="buttons" aria-label={ t.aria_main_actions.clone() }>
-                        <button::Start />
-                        <button::Group />
-                        <button::Channel />
+                    <nav aria-label={ t.aria_main_actions.clone() }>
+                        <div class="buttons is-centered" style="margin-bottom: 0.5rem;">
+                            <button::Group />
+                            <button::Channel />
+                        </div>
+                        <div class="buttons is-centered">
+                            <button::Start />
+                        </div>
                     </nav>
                   </div>
 

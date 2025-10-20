@@ -6,7 +6,7 @@ pub(crate) fn start() -> Html {
     let ctx = use_language();
     let text = ctx.translations.ui.start_bot.clone();
 
-    link(&text, "https://t.me/kubcoin_bot", &text, false)
+    link_medium(&text, "https://t.me/kubcoin_bot", &text, false)
 }
 
 #[function_component(Group)]
@@ -30,6 +30,27 @@ pub(crate) fn link(text: &str, url: &'static str, aria_label: &str, primary: boo
         "button is-primary is-small is-outlined"
     } else {
         "button is-link is-small"
+    };
+    let text = text.to_string();
+    let aria_label = aria_label.to_string();
+
+    html! {
+         <a href={ url }
+            target="_blank"
+            rel="noopener noreferrer"
+            class={ class }
+            aria-label={ aria_label }>
+            { text }
+         </a>
+
+    }
+}
+
+pub(crate) fn link_medium(text: &str, url: &'static str, aria_label: &str, primary: bool) -> Html {
+    let class = if primary {
+        "button is-primary is-medium is-outlined"
+    } else {
+        "button is-link is-medium"
     };
     let text = text.to_string();
     let aria_label = aria_label.to_string();
