@@ -1,7 +1,7 @@
 //! Language provider and context for managing i18n state.
 
-use crate::i18n::{I18nContent, load_translations};
-use crate::i18n_types::Language;
+use super::content::{I18nContent, load_translations};
+use super::types::Language;
 use std::rc::Rc;
 use yew::prelude::*;
 
