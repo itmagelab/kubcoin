@@ -27,9 +27,9 @@ pub(crate) fn channel() -> Html {
 
 pub(crate) fn link(text: &str, url: &'static str, aria_label: &str, primary: bool) -> Html {
     let class = if primary {
-        "button is-primary is-medium is-outlined"
+        "button is-primary is-small is-outlined"
     } else {
-        "button is-link is-medium"
+        "button is-link is-small"
     };
     let text = text.to_string();
     let aria_label = aria_label.to_string();
