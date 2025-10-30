@@ -46,6 +46,7 @@ ui:
   feature_expense_categories: "✅ Категории расходов"
   feature_math_expressions: "✅ Математические выражения"
   feature_ai_text_recognition: "✅ AI распознавание текста"
+  feature_ai_voice_recognition: "✅ AI распознавание голосовых"
   feature_monthly_reports: "✅ Месячные отчёты"
   feature_community_support: "✅ Поддержка сообщества"
   feature_advanced_analytics: "✅ Расширенная аналитика"

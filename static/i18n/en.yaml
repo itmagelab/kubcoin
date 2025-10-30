@@ -46,6 +46,7 @@ ui:
   feature_expense_categories: "✅ Expense categories"
   feature_math_expressions: "✅ Math expressions"
   feature_ai_text_recognition: "✅ AI text recognition"
+  feature_ai_voice_recognition: "✅ AI voice recognition"
   feature_monthly_reports: "✅ Monthly reports"
   feature_community_support: "✅ Community support"
   feature_advanced_analytics: "✅ Advanced analytics"

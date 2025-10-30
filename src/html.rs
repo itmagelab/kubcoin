@@ -174,7 +174,6 @@ pub(crate) fn pricing() -> Html {
                                 <li>{ &ui.feature_basic_analytics }</li>
                                 <li>{ &ui.feature_expense_categories }</li>
                                 <li>{ &ui.feature_math_expressions }</li>
-                                <li>{ &ui.feature_ai_text_recognition }</li>
                                 <li>{ &ui.feature_monthly_reports }</li>
                                 <li>{ &ui.feature_community_support }</li>
                             </ul>
@@ -204,6 +203,8 @@ pub(crate) fn pricing() -> Html {
                                 <li>{ &ui.feature_goals_savings }</li>
                                 <li>{ &ui.feature_priority_support }</li>
                                 <li>{ &ui.feature_extended_backups }</li>
+                                <li>{ &ui.feature_ai_text_recognition }</li>
+                                <li>{ &ui.feature_ai_voice_recognition}</li>
                             </ul>
                         </div>
 

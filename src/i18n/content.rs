@@ -106,6 +106,7 @@ pub(crate) struct UITranslations {
     pub(crate) feature_expense_categories: String,
     pub(crate) feature_math_expressions: String,
     pub(crate) feature_ai_text_recognition: String,
+    pub(crate) feature_ai_voice_recognition: String,
     pub(crate) feature_monthly_reports: String,
     pub(crate) feature_community_support: String,
     pub(crate) feature_advanced_analytics: String,
