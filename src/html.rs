@@ -1,6 +1,8 @@
 mod button;
+mod icon;
 mod language_switcher;
 
+use icon::CoinIcon;
 use language_switcher::LanguageSwitcher;
 
 use yew::prelude::*;
@@ -22,7 +24,7 @@ pub(crate) fn header() -> Html {
                     <div class="w-full lg:w-1/2">
                         <div class="bg-white rounded-xl shadow-lg p-6 mb-6 transition-all hover-lift">
                             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 flex items-center justify-center gap-3">
-                                <span class="text-4xl">{"🪙"}</span>
+                                <CoinIcon class="w-12 h-12 md:w-16 md:h-16 text-yellow-500" />
                                 { "KubCoin" }
                             </h1>
                             <h2 class="text-xl md:text-2xl text-gray-600">{ &t.subtitle }</h2>
