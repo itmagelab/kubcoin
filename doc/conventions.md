@@ -484,28 +484,43 @@ mod tests {
 
 ### Commit messages
 
-**ОБЯЗАТЕЛЬНО:** Все commit messages **только на английском языке**
+## ⚠️ КРИТИЧЕСКИ ВАЖНО: ТОЛЬКО АНГЛИЙСКИЙ ЯЗЫК
+
+**СТРОГОЕ ПРАВИЛО:** Все commit messages **ИСКЛЮЧИТЕЛЬНО на английском языке**. Это обязательное требование для всего проекта.
+
+### Почему английский обязателен:
+1. Стандарт индустрии — все профессиональные проекты используют английский
+2. Совместимость с международными инструментами CI/CD
+3. Читаемость для разработчиков из разных стран
+4. Соответствие conventional commits спецификации
+
+### Правила commit messages:
 
 ```bash
-# ✅ Правильно — conventional commits на английском
-git commit -m "feat: add new testimonials section"
-git commit -m "fix: resolve image loading issue"
-git commit -m "docs: update README"
-git commit -m "style: improve FAQ spacing"
+# ✅ ПРАВИЛЬНО — conventional commits на английском
+git commit -m "feat(ui): change color scheme from blue to green"
+git commit -m "fix(button): resolve hover state issue"
+git commit -m "docs: update conventions.md with commit rules"
+git commit -m "style: improve FAQ section spacing"
 git commit -m "refactor: extract button components to separate file"
 git commit -m "perf: optimize WASM bundle size"
+git commit -m "feat(pricing): add premium plan section"
+git commit -m "fix(i18n): correct translation keys"
 
-# ❌ Неправильно — русский язык
-git commit -m "feat: добавить новую секцию"
+# ❌ НЕПРАВИЛЬНО — русский язык (ЗАПРЕЩЕНО!)
+git commit -m "feat(ui): изменена цветовая схема с синей на зелёную"
 git commit -m "fix: исправить баг"
+git commit -m "добавлена новая секция"
+git commit -m "обновление стилей"
 
-# ❌ Неправильно — неинформативные сообщения
+# ❌ НЕПРАВИЛЬНО — неинформативные сообщения
 git commit -m "updates"
 git commit -m "fix bug"
 git commit -m "wip"
+git commit -m "changes"
 ```
 
-**Формат:** `<type>: <description>`
+**Формат:** `<type>(<scope>): <description>`
 
 **Типы коммитов:**
 - `feat:` — новая функциональность
@@ -516,6 +531,28 @@ git commit -m "wip"
 - `perf:` — улучшение производительности
 - `test:` — добавление тестов
 - `chore:` — обновление зависимостей, конфигурации
+
+**Scope (опционально):**
+- `ui` — пользовательский интерфейс
+- `button` — компонент кнопок
+- `i18n` — интернационализация
+- `pricing` — раздел тарифов
+- `faq` — раздел FAQ
+- `security` — раздел безопасности
+- `chat` — раздел чата
+- `footer` — футер
+- `header` — хедер
+
+**Примеры хороших commit messages:**
+```bash
+feat(ui): add green color theme support
+fix(button): correct focus ring color for accessibility
+docs: add theme changes documentation
+style(faq): adjust padding and spacing
+refactor(chat): extract dialog component
+perf(images): add lazy loading for screenshots
+test(content): add YAML validation tests
+chore(deps): update yew to 0.21
 ```
 
 ### Branches

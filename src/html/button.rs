@@ -30,8 +30,8 @@ pub(crate) fn link(text: &str, url: &'static str, aria_label: &str, primary: boo
 
     let (color_classes, focus_classes) = if primary {
         (
-            "bg-blue-600 text-white hover:bg-blue-700",
-            "focus:ring-blue-500",
+            "bg-green-600 text-white hover:bg-green-700",
+            "focus:ring-green-500",
         )
     } else {
         (
@@ -60,8 +60,8 @@ pub(crate) fn link_medium(text: &str, url: &'static str, aria_label: &str, prima
 
     let (color_classes, focus_classes) = if primary {
         (
-            "bg-blue-600 text-white hover:bg-blue-700",
-            "focus:ring-blue-500",
+            "bg-green-600 text-white hover:bg-green-700",
+            "focus:ring-green-500",
         )
     } else {
         (

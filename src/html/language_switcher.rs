@@ -25,16 +25,16 @@ pub(crate) fn language_switcher() -> Html {
         })
     };
 
-    let base_classes = "inline-flex items-center justify-center px-3 py-1 rounded-md text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500";
+    let base_classes = "inline-flex items-center justify-center px-3 py-1 rounded-md text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500";
 
     let ru_classes = if current_lang == Language::Russian {
-        "bg-blue-600 text-white hover:bg-blue-700"
+        "bg-green-600 text-white hover:bg-green-700"
     } else {
         "bg-gray-200 text-gray-800 hover:bg-gray-300"
     };
 
     let en_classes = if current_lang == Language::English {
-        "bg-blue-600 text-white hover:bg-blue-700"
+        "bg-green-600 text-white hover:bg-green-700"
     } else {
         "bg-gray-200 text-gray-800 hover:bg-gray-300"
     };

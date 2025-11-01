@@ -21,7 +21,7 @@ fn app() -> Html {
 #[function_component(AppContent)]
 fn app_content() -> Html {
     html! {
-        <div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div class="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100">
             <section class="py-8 md:py-16">
                 <div class="container mx-auto px-4">
                     <html::Header />

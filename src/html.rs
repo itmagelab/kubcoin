@@ -150,8 +150,8 @@ pub(crate) fn security() -> Html {
                 }) }
             </div>
 
-            <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 mt-8">
-                <p class="text-center text-blue-800">
+            <div class="bg-green-50 border border-green-200 rounded-xl p-6 mt-8">
+                <p class="text-center text-green-800">
                     <strong class="font-semibold">{ &ui.notification_tip }</strong>
                     { " " }{ &ui.notification_tip_text }
                 </p>
@@ -221,14 +221,14 @@ pub(crate) fn pricing() -> Html {
                     </div>
                 </div>
 
-                <div class="bg-white rounded-xl shadow-lg p-8 border-2 border-blue-500 transition-all hover-lift relative">
-                    <span class="absolute -top-3 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                <div class="bg-white rounded-xl shadow-lg p-8 border-2 border-green-500 transition-all hover-lift relative">
+                    <span class="absolute -top-3 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                         { &ui.pricing_premium_coming_soon }
                     </span>
                     <div class="text-center">
                         <div class="text-5xl mb-4">{"⭐"}</div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">{ &ui.pricing_premium_title }</h3>
-                        <p class="text-3xl font-bold text-blue-600 mb-1">{ &ui.pricing_premium_price }</p>
+                        <p class="text-3xl font-bold text-green-600 mb-1">{ &ui.pricing_premium_price }</p>
                         <p class="text-gray-500 text-sm">{ &ui.pricing_premium_period }</p>
                     </div>
 
@@ -236,45 +236,45 @@ pub(crate) fn pricing() -> Html {
                         <p class="font-semibold text-gray-900 mb-4">{ &ui.pricing_premium_everything_plus }</p>
                         <ul class="space-y-2 text-gray-700">
                             <li class="flex items-center">
-                                <span class="text-blue-500 mr-2">{"✓"}</span>
+                                <span class="text-green-500 mr-2">{"✓"}</span>
                                 { &ui.feature_advanced_analytics }
                             </li>
                             <li class="flex items-center">
-                                <span class="text-blue-500 mr-2">{"✓"}</span>
+                                <span class="text-green-500 mr-2">{"✓"}</span>
                                 { &ui.feature_charts_visualization }
                             </li>
                             <li class="flex items-center">
-                                <span class="text-blue-500 mr-2">{"✓"}</span>
+                                <span class="text-green-500 mr-2">{"✓"}</span>
                                 { &ui.feature_budget_planning }
                             </li>
                             <li class="flex items-center">
-                                <span class="text-blue-500 mr-2">{"✓"}</span>
+                                <span class="text-green-500 mr-2">{"✓"}</span>
                                 { &ui.feature_multiple_currencies }
                             </li>
                             <li class="flex items-center">
-                                <span class="text-blue-500 mr-2">{"✓"}</span>
+                                <span class="text-green-500 mr-2">{"✓"}</span>
                                 { &ui.feature_goals_savings }
                             </li>
                             <li class="flex items-center">
-                                <span class="text-blue-500 mr-2">{"✓"}</span>
+                                <span class="text-green-500 mr-2">{"✓"}</span>
                                 { &ui.feature_priority_support }
                             </li>
                             <li class="flex items-center">
-                                <span class="text-blue-500 mr-2">{"✓"}</span>
+                                <span class="text-green-500 mr-2">{"✓"}</span>
                                 { &ui.feature_extended_backups }
                             </li>
                             <li class="flex items-center">
-                                <span class="text-blue-500 mr-2">{"✓"}</span>
+                                <span class="text-green-500 mr-2">{"✓"}</span>
                                 { &ui.feature_ai_text_recognition }
                             </li>
                             <li class="flex items-center">
-                                <span class="text-blue-500 mr-2">{"✓"}</span>
+                                <span class="text-green-500 mr-2">{"✓"}</span>
                                 { &ui.feature_ai_voice_recognition}
                             </li>
                         </ul>
                     </div>
 
-                    <button class="w-full mt-6 bg-blue-500 text-white py-3 px-6 rounded-lg font-semibold opacity-50 cursor-not-allowed">
+                    <button class="w-full mt-6 bg-green-500 text-white py-3 px-6 rounded-lg font-semibold opacity-50 cursor-not-allowed">
                         { &ui.pricing_premium_in_development }
                     </button>
                 </div>
@@ -284,7 +284,7 @@ pub(crate) fn pricing() -> Html {
                 <p class="text-center text-yellow-800">
                     <strong class="font-semibold">{ "💼 Enterprise: " }</strong>
                     { &ui.pricing_enterprise_text }{ " " }
-                    <a href="https://t.me/itmagelab_ru_group" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">
+                    <a href="https://t.me/itmagelab_ru_group" target="_blank" rel="noopener noreferrer" class="text-green-600 hover:text-green-800 underline">
                         { &ui.pricing_enterprise_contact }
                     </a>
                     { " " }{ &ui.pricing_enterprise_suffix }
@@ -351,7 +351,7 @@ fn qa() -> Html {
                         })
                     };
                     html! {
-                        <div class={classes!("bg-white", "rounded-xl", "shadow-lg", "p-6", "transition-all", if is_open { "ring-2 ring-blue-500" } else { "" })} role="article">
+                        <div class={classes!("bg-white", "rounded-xl", "shadow-lg", "p-6", "transition-all", if is_open { "ring-2 ring-green-500" } else { "" })} role="article">
                             <button
                                 class="w-full text-left"
                                 onclick={on_click}
@@ -427,7 +427,7 @@ pub(crate) fn chat(props: &ChatProps) -> Html {
             html! {
             <div class="space-y-3">
                 <div class="flex justify-end" role="group" aria-label={format!("{} {}", user_msg, idx + 1)}>
-                    <div class="bg-blue-500 text-white rounded-2xl rounded-br-none px-4 py-2 max-w-[80%]">
+                    <div class="bg-green-500 text-white rounded-2xl rounded-br-none px-4 py-2 max-w-[80%]">
                         <p class="text-sm">{ &dialog.req }</p>
                     </div>
                 </div>
