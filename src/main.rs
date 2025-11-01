@@ -9,9 +9,6 @@ use tracing_subscriber::{
 use wasm_bindgen::JsValue;
 use yew::prelude::*;
 
-// https://core.telegram.org/bots/webapps#initializing-mini-apps
-// https://bulma.io/documentation/
-
 #[function_component(App)]
 fn app() -> Html {
     html! {
@@ -24,17 +21,19 @@ fn app() -> Html {
 #[function_component(AppContent)]
 fn app_content() -> Html {
     html! {
-        <>
-        <section class="hero">
-            <div class="hero-body">
-                <html::Header />
-            </div>
-        </section>
-        <section class="section">
-            <html::Body />
-        </section>
-        <html::Footer />
-        </>
+        <div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+            <section class="py-8 md:py-16">
+                <div class="container mx-auto px-4">
+                    <html::Header />
+                </div>
+            </section>
+            <section class="py-8 md:py-16">
+                <div class="container mx-auto px-4">
+                    <html::Body />
+                </div>
+            </section>
+            <html::Footer />
+        </div>
     }
 }
 

@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="ru">
-    <head>
+    <head></head>
         <meta charset="utf-8" />
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
-        <title>
+        <title></title>
             KubCoin - Телеграм бот для управления финансами | iTmageLab
         </title>
         <meta
@@ -73,16 +73,24 @@
             href="https://cdnjs.cloudflare.com"
             crossorigin
         />
-        <link
-            rel="preload"
-            href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
-            as="style"
-        />
 
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
-        />
+        <!-- Tailwind CSS via CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script></script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#3b82f6',
+                            secondary: '#1e40af',
+                            accent: '#10b981',
+                            dark: '#1f2937',
+                            light: '#f8fafc'
+                        }
+                    }
+                }
+            }
+        </script>
 
         <!-- Font Awesome for icons -->
         <link
@@ -183,7 +191,7 @@
             }
         </script>
         <noscript
-            ><div>
+            ><div></div>
                 <img
                     src="https://mc.yandex.ru/watch/104580346"
                     style="position: absolute; left: -9999px"
@@ -191,7 +199,7 @@
                 /></div
         ></noscript>
         <!-- /Yandex.Metrika counter -->
-        <style>
+        <style></style>
             .phone-fade {
                 position: relative;
                 overflow: hidden;
@@ -202,7 +210,7 @@
                 position: absolute;
                 inset: 0;
                 border-radius: inherit;
-                box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.6); /* внутреннее затемнение */
+                box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.6);
                 pointer-events: none;
             }
             .faq-item {
@@ -211,10 +219,10 @@
             .faq-answer {
                 display: none;
                 padding: 1rem;
-                border-left: 3px solid #3273dc; /* синий акцент */
-                background-color: #f5f5f5;
+                border-left: 3px solid #3b82f6;
+                background-color: #f8fafc;
                 border-radius: 6px;
-                color: #363636;
+                color: #374151;
             }
             .faq-item.is-active .faq-answer {
                 display: block;
@@ -232,7 +240,7 @@
             }
 
             /* Screen reader only utility class */
-            .is-sr-only {
+            .sr-only {
                 position: absolute;
                 width: 1px;
                 height: 1px;
@@ -251,15 +259,15 @@
 
             /* Focus indicators for accessibility */
             *:focus {
-                outline: 3px solid #2366d1;
+                outline: 3px solid #3b82f6;
                 outline-offset: 3px;
             }
 
             a:focus,
             button:focus {
-                outline: 3px solid #2366d1;
+                outline: 3px solid #3b82f6;
                 outline-offset: 3px;
-                box-shadow: 0 0 0 3px rgba(35, 102, 209, 0.25);
+                box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
             }
 
             /* Skip to main content link for accessibility */
@@ -268,7 +276,7 @@
                 left: -9999px;
                 z-index: 999;
                 padding: 1em;
-                background-color: #3273dc;
+                background-color: #3b82f6;
                 color: white;
                 text-decoration: none;
             }
@@ -282,18 +290,11 @@
             }
 
             /* Smooth animations for UX */
-            .box,
-            .button,
-            .card {
+            .transition-all {
                 transition: all 0.3s ease;
             }
 
-            .box:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            }
-
-            .button:hover {
+            .hover-lift:hover {
                 transform: translateY(-2px);
             }
 
@@ -308,113 +309,22 @@
                 }
             }
 
-            .is-loading {
+            .animate-pulse {
                 animation: pulse 1.5s ease-in-out infinite;
-            }
-
-            /* Mobile improvements */
-            @media screen and (max-width: 768px) {
-                /* Better touch targets */
-                .button,
-                a.button {
-                    min-height: 44px;
-                    min-width: 44px;
-                    padding: 0.75rem 1.5rem;
-                }
-
-                /* Larger text for readability */
-                .title.is-1 {
-                    font-size: 2rem;
-                }
-
-                .subtitle.is-3 {
-                    font-size: 1.25rem;
-                }
-
-                /* Better spacing */
-                .box {
-                    padding: 1.5rem;
-                }
-
-                .section {
-                    padding: 2rem 1.5rem;
-                }
-
-                /* Optimize images */
-                .phone-fade {
-                    max-width: 100% !important;
-                }
-
-                /* Stack buttons vertically on mobile */
-                .buttons {
-                    flex-direction: column;
-                    align-items: stretch;
-                }
-
-                .buttons .button {
-                    width: 100%;
-                    margin-bottom: 0.5rem;
-                }
-
-                /* Keep language switcher horizontal on mobile */
-                .language-switcher {
-                    flex-direction: row !important;
-                    align-items: center !important;
-                }
-
-                .language-switcher .button {
-                    width: auto !important;
-                    margin-bottom: 0 !important;
-                }
-
-                /* Better chat dialog layout */
-                .block .box {
-                    max-width: 80% !important;
-                }
-            }
-
-            /* Tablet improvements */
-            @media screen and (min-width: 769px) and (max-width: 1023px) {
-                .phone-fade {
-                    max-width: 350px !important;
-                }
-            }
-
-            /* Reduce motion for users who prefer it */
-            @media (prefers-reduced-motion: reduce) {
-                *,
-                *::before,
-                *::after {
-                    animation-duration: 0.01ms !important;
-                    animation-iteration-count: 1 !important;
-                    transition-duration: 0.01ms !important;
-                    scroll-behavior: auto !important;
-                }
-            }
-
-            /* High contrast mode support */
-            @media (prefers-contrast: high) {
-                .box {
-                    border: 2px solid currentColor;
-                }
-
-                .button {
-                    border-width: 2px;
-                }
             }
 
             /* Loading skeleton styles */
             .skeleton {
                 background: linear-gradient(
                     90deg,
-                    #f0f0f0 0%,
-                    #e0e0e0 20%,
-                    #f0f0f0 40%,
-                    #f0f0f0 100%
+                    #f3f4f6 0%,
+                    #e5e7eb 20%,
+                    #f3f4f6 40%,
+                    #f3f4f6 100%
                 );
                 background-size: 200% 100%;
                 animation: loading 1.5s ease-in-out infinite;
-                border-radius: 4px;
+                border-radius: 6px;
             }
 
             @keyframes loading {
@@ -445,16 +355,33 @@
             .skeleton-button {
                 height: 44px;
                 width: 150px;
-                border-radius: 4px;
+                border-radius: 6px;
             }
 
             /* Hide skeleton when content is loaded */
             .content-loaded .skeleton {
                 display: none;
             }
+
+            /* Custom utility classes for consistency */
+            .bg-light {
+                background-color: #f8fafc;
+            }
+            .text-dark {
+                color: #1f2937;
+            }
+            .text-muted {
+                color: #6b7280;
+            }
+            .border-accent {
+                border-color: #10b981;
+            }
+            .border-primary {
+                border-color: #3b82f6;
+            }
         </style>
     </head>
-    <body>
+    <body class="bg-light text-dark font-sans antialiased">
         <a href="#main-content" class="skip-to-main"
             >Перейти к основному содержанию</a
         >
