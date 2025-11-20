@@ -1,152 +1,116 @@
 <!doctype html>
 <html lang="ru">
-    <head></head>
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
-        <title>
-            KubCoin - Телеграм бот для управления финансами | iTmageLab
-        </title>
-        <meta
-            name="description"
-            content="KubCoin — современный Telegram-бот для учёта доходов и расходов. Быстрый, безопасный и удобный инструмент управления личными финансами. Создан на Rust для максимальной производительности."
-        />
-        <meta
-            name="keywords"
-            content="KubCoin, финансовый бот, Telegram бот, учёт финансов, управление расходами, личные финансы, бот для финансов, iTmageLab, Rust, финансовая аналитика"
-        />
 
-        <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://kubcoin.ru/" />
-        <meta
-            property="og:title"
-            content="KubCoin — Telegram-бот для управления финансами"
-        />
-        <meta
-            property="og:description"
-            content="Управляйте своими доходами и расходами легко и безопасно. KubCoin — современный финансовый помощник в Telegram с мощной аналитикой."
-        />
-        <meta
-            property="og:image"
-            content="https://kubcoin.ru/images/og-image.png"
-        />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta
-            property="og:image:alt"
-            content="KubCoin - Финансовый бот для Telegram"
-        />
-        <meta property="og:locale" content="ru_RU" />
-        <meta property="og:site_name" content="KubCoin" />
+<head></head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>
+    KubCoin - Телеграм бот для управления финансами | iTmageLab
+</title>
+<meta name="description"
+    content="KubCoin — современный Telegram-бот для учёта доходов и расходов. Быстрый, безопасный и удобный инструмент управления личными финансами. Создан на Rust для максимальной производительности." />
+<meta name="keywords"
+    content="KubCoin, финансовый бот, Telegram бот, учёт финансов, управление расходами, личные финансы, бот для финансов, iTmageLab, Rust, финансовая аналитика" />
 
-        <!-- Twitter -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://kubcoin.ru/" />
-        <meta
-            name="twitter:title"
-            content="KubCoin — Telegram-бот для управления финансами"
-        />
-        <meta
-            name="twitter:description"
-            content="Управляйте своими доходами и расходами легко и безопасно. KubCoin — современный финансовый помощник в Telegram."
-        />
-        <meta
-            name="twitter:image"
-            content="https://kubcoin.ru/images/og-image.png"
-        />
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kubcoin.ru/" />
+<meta property="og:title" content="KubCoin — Telegram-бот для управления финансами" />
+<meta property="og:description"
+    content="Управляйте своими доходами и расходами легко и безопасно. KubCoin — современный финансовый помощник в Telegram с мощной аналитикой." />
+<meta property="og:image" content="https://kubcoin.ru/images/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="KubCoin - Финансовый бот для Telegram" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:site_name" content="KubCoin" />
 
-        <!-- Additional SEO meta tags -->
-        <meta name="author" content="iTmageLab" />
-        <meta name="robots" content="index, follow" />
-        <meta name="language" content="Russian" />
-        <meta name="revisit-after" content="7 days" />
-        <link rel="canonical" href="https://kubcoin.ru/" />
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content="https://kubcoin.ru/" />
+<meta name="twitter:title" content="KubCoin — Telegram-бот для управления финансами" />
+<meta name="twitter:description"
+    content="Управляйте своими доходами и расходами легко и безопасно. KubCoin — современный финансовый помощник в Telegram." />
+<meta name="twitter:image" content="https://kubcoin.ru/images/og-image.png" />
 
-        <!-- Preload critical resources -->
-        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-        <link rel="preconnect" href="https://mc.yandex.ru" crossorigin />
-        <link
-            rel="preconnect"
-            href="https://cdnjs.cloudflare.com"
-            crossorigin
-        />
+<!-- Additional SEO meta tags -->
+<meta name="author" content="iTmageLab" />
+<meta name="robots" content="index, follow" />
+<meta name="language" content="Russian" />
+<meta name="revisit-after" content="7 days" />
+<link rel="canonical" href="https://kubcoin.ru/" />
 
-        <!-- Tailwind CSS via CDN -->
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            tailwind.config = {
-                theme: {
-                    extend: {
-                        colors: {
-                            primary: '#10b981',
-                            secondary: '#059669',
-                            accent: '#34d399',
-                            dark: '#1f2937',
-                            light: '#f0fdf4'
-                        }
-                    }
+<!-- Preload critical resources -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="preconnect" href="https://mc.yandex.ru" crossorigin />
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+<!-- Tailwind CSS via CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#10b981',
+                    secondary: '#059669',
+                    accent: '#34d399',
+                    dark: '#1f2937',
+                    light: '#f0fdf4'
                 }
             }
-        </script>
+        }
+    }
+</script>
 
-        <!-- Font Awesome for icons -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-        <link data-trunk rel="copy-dir" href="static/images" />
-        <link
-            data-trunk
-            rel="copy-file"
-            href="static/yandex_bc389150b2accc4c.html"
-        />
-        <link data-trunk rel="copy-file" href="static/robots.txt" />
-        <link data-trunk rel="copy-file" href="static/sitemap.xml" />
-        <link rel="icon" type="image/png" href="images/favicon.ico" />
-        <!-- Yandex.Metrika counter -->
-        <script type="text/javascript">
-            (function (m, e, t, r, i, k, a) {
-                m[i] =
-                    m[i] ||
-                    function () {
-                        (m[i].a = m[i].a || []).push(arguments);
-                    };
-                m[i].l = 1 * new Date();
-                for (var j = 0; j < document.scripts.length; j++) {
-                    if (document.scripts[j].src === r) {
-                        return;
-                    }
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link data-trunk rel="copy-dir" href="static/images" />
+<link data-trunk rel="copy-file" href="static/yandex_bc389150b2accc4c.html" />
+<link data-trunk rel="copy-file" href="static/robots.txt" />
+<link data-trunk rel="copy-file" href="static/sitemap.xml" />
+<link data-trunk rel="copy-file" href="static/404.html" />
+<link rel="icon" type="image/png" href="images/favicon.ico" />
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] =
+                m[i] ||
+                function () {
+                    (m[i].a = m[i].a || []).push(arguments);
+                };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
                 }
-                ((k = e.createElement(t)),
-                    (a = e.getElementsByTagName(t)[0]),
-                    (k.async = 1),
-                    (k.src = r),
-                    a.parentNode.insertBefore(k, a));
-            })(
-                window,
-                document,
-                "script",
-                "https://mc.yandex.ru/metrika/tag.js?id=104580346",
-                "ym",
-            );
+            }
+            ((k = e.createElement(t)),
+                (a = e.getElementsByTagName(t)[0]),
+                (k.async = 1),
+                (k.src = r),
+                a.parentNode.insertBefore(k, a));
+        })(
+            window,
+            document,
+            "script",
+            "https://mc.yandex.ru/metrika/tag.js?id=104580346",
+            "ym",
+        );
 
-            ym(104580346, "init", {
-                ssr: true,
-                webvisor: true,
-                clickmap: true,
-                ecommerce: "dataLayer",
-                accurateTrackBounce: true,
-                trackLinks: true,
-            });
-        </script>
-        <!-- Structured Data (JSON-LD) for SEO -->
-        <script type="application/ld+json">
+    ym(104580346, "init", {
+        ssr: true,
+        webvisor: true,
+        clickmap: true,
+        ecommerce: "dataLayer",
+        accurateTrackBounce: true,
+        trackLinks: true,
+    });
+</script>
+<!-- Structured Data (JSON-LD) for SEO -->
+<script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "SoftwareApplication",
@@ -171,7 +135,7 @@
                 }
             }
         </script>
-        <script type="application/ld+json">
+<script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "Organization",
@@ -190,201 +154,208 @@
                 }
             }
         </script>
-        <noscript
-            ><div></div>
-                <img
-                    src="https://mc.yandex.ru/watch/104580346"
-                    style="position: absolute; left: -9999px"
-                    alt=""
-                /></div
-        ></noscript>
-        <!-- /Yandex.Metrika counter -->
-        <style>
-            .phone-fade {
-                position: relative;
-                overflow: hidden;
-                border-radius: 20px;
-            }
-            .phone-fade::after {
-                content: "";
-                position: absolute;
-                inset: 0;
-                border-radius: inherit;
-                box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.6);
-                pointer-events: none;
-            }
-            .faq-item {
-                margin-bottom: 1rem;
-            }
-            .faq-answer {
-                display: none;
-                padding: 1rem;
-                border-left: 3px solid #10b981;
-                background-color: #f0fdf4;
-                border-radius: 6px;
-                color: #374151;
-            }
-            .faq-item.is-active .faq-answer {
-                display: block;
-                animation: fadeIn 0.3s ease;
-            }
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(-5px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
+<noscript>
+    <div></div>
+    <img src="https://mc.yandex.ru/watch/104580346" style="position: absolute; left: -9999px" alt="" /></div>
+</noscript>
+<!-- /Yandex.Metrika counter -->
+<style>
+    .phone-fade {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+    }
 
-            /* Screen reader only utility class */
-            .sr-only {
-                position: absolute;
-                width: 1px;
-                height: 1px;
-                padding: 0;
-                margin: -1px;
-                overflow: hidden;
-                clip: rect(0, 0, 0, 0);
-                white-space: nowrap;
-                border-width: 0;
-            }
+    .phone-fade::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.6);
+        pointer-events: none;
+    }
 
-            /* Smooth scroll behavior */
-            html {
-                scroll-behavior: smooth;
-            }
+    .faq-item {
+        margin-bottom: 1rem;
+    }
 
-            /* Focus indicators for accessibility */
-            *:focus {
-                outline: 3px solid #10b981;
-                outline-offset: 3px;
-            }
+    .faq-answer {
+        display: none;
+        padding: 1rem;
+        border-left: 3px solid #10b981;
+        background-color: #f0fdf4;
+        border-radius: 6px;
+        color: #374151;
+    }
 
-            a:focus,
-            button:focus {
-                outline: 3px solid #10b981;
-                outline-offset: 3px;
-                box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
-            }
+    .faq-item.is-active .faq-answer {
+        display: block;
+        animation: fadeIn 0.3s ease;
+    }
 
-            /* Skip to main content link for accessibility */
-            .skip-to-main {
-                position: absolute;
-                left: -9999px;
-                z-index: 999;
-                padding: 1em;
-                background-color: #10b981;
-                color: white;
-                text-decoration: none;
-            }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-5px);
+        }
 
-            .skip-to-main:focus {
-                left: 50%;
-                transform: translateX(-50%);
-                top: 0;
-                outline: 3px solid #ffffff;
-                outline-offset: 2px;
-            }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 
-            /* Smooth animations for UX */
-            .transition-all {
-                transition: all 0.3s ease;
-            }
+    /* Screen reader only utility class */
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+    }
 
-            .hover-lift:hover {
-                transform: translateY(-2px);
-            }
+    /* Smooth scroll behavior */
+    html {
+        scroll-behavior: smooth;
+    }
 
-            /* Loading animation */
-            @keyframes pulse {
-                0%,
-                100% {
-                    opacity: 1;
-                }
-                50% {
-                    opacity: 0.5;
-                }
-            }
+    /* Focus indicators for accessibility */
+    *:focus {
+        outline: 3px solid #10b981;
+        outline-offset: 3px;
+    }
 
-            .animate-pulse {
-                animation: pulse 1.5s ease-in-out infinite;
-            }
+    a:focus,
+    button:focus {
+        outline: 3px solid #10b981;
+        outline-offset: 3px;
+        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+    }
 
-            /* Loading skeleton styles */
-            .skeleton {
-                background: linear-gradient(
-                    90deg,
-                    #f3f4f6 0%,
-                    #e5e7eb 20%,
-                    #f3f4f6 40%,
-                    #f3f4f6 100%
-                );
-                background-size: 200% 100%;
-                animation: loading 1.5s ease-in-out infinite;
-                border-radius: 6px;
-            }
+    /* Skip to main content link for accessibility */
+    .skip-to-main {
+        position: absolute;
+        left: -9999px;
+        z-index: 999;
+        padding: 1em;
+        background-color: #10b981;
+        color: white;
+        text-decoration: none;
+    }
 
-            @keyframes loading {
-                0% {
-                    background-position: 200% 0;
-                }
-                100% {
-                    background-position: -200% 0;
-                }
-            }
+    .skip-to-main:focus {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+        outline: 3px solid #ffffff;
+        outline-offset: 2px;
+    }
 
-            .skeleton-text {
-                height: 1rem;
-                margin-bottom: 0.5rem;
-            }
+    /* Smooth animations for UX */
+    .transition-all {
+        transition: all 0.3s ease;
+    }
 
-            .skeleton-title {
-                height: 2rem;
-                margin-bottom: 1rem;
-                width: 60%;
-            }
+    .hover-lift:hover {
+        transform: translateY(-2px);
+    }
 
-            .skeleton-box {
-                height: 200px;
-                margin-bottom: 1rem;
-            }
+    /* Loading animation */
+    @keyframes pulse {
 
-            .skeleton-button {
-                height: 44px;
-                width: 150px;
-                border-radius: 6px;
-            }
+        0%,
+        100% {
+            opacity: 1;
+        }
 
-            /* Hide skeleton when content is loaded */
-            .content-loaded .skeleton {
-                display: none;
-            }
+        50% {
+            opacity: 0.5;
+        }
+    }
 
-            /* Custom utility classes for consistency */
-            .bg-light {
-                background-color: #f0fdf4;
-            }
-            .text-dark {
-                color: #1f2937;
-            }
-            .text-muted {
-                color: #6b7280;
-            }
-            .border-accent {
-                border-color: #34d399;
-            }
-            .border-primary {
-                border-color: #10b981;
-            }
-        </style>
-    </head>
-    <body class="bg-light text-dark font-sans antialiased">
-        <a href="#main-content" class="skip-to-main"
-            >Перейти к основному содержанию</a
-        >
-        <main id="main-content" role="main"></main>
-    </body>
+    .animate-pulse {
+        animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    /* Loading skeleton styles */
+    .skeleton {
+        background: linear-gradient(90deg,
+                #f3f4f6 0%,
+                #e5e7eb 20%,
+                #f3f4f6 40%,
+                #f3f4f6 100%);
+        background-size: 200% 100%;
+        animation: loading 1.5s ease-in-out infinite;
+        border-radius: 6px;
+    }
+
+    @keyframes loading {
+        0% {
+            background-position: 200% 0;
+        }
+
+        100% {
+            background-position: -200% 0;
+        }
+    }
+
+    .skeleton-text {
+        height: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .skeleton-title {
+        height: 2rem;
+        margin-bottom: 1rem;
+        width: 60%;
+    }
+
+    .skeleton-box {
+        height: 200px;
+        margin-bottom: 1rem;
+    }
+
+    .skeleton-button {
+        height: 44px;
+        width: 150px;
+        border-radius: 6px;
+    }
+
+    /* Hide skeleton when content is loaded */
+    .content-loaded .skeleton {
+        display: none;
+    }
+
+    /* Custom utility classes for consistency */
+    .bg-light {
+        background-color: #f0fdf4;
+    }
+
+    .text-dark {
+        color: #1f2937;
+    }
+
+    .text-muted {
+        color: #6b7280;
+    }
+
+    .border-accent {
+        border-color: #34d399;
+    }
+
+    .border-primary {
+        border-color: #10b981;
+    }
+</style>
+</head>
+
+<body class="bg-light text-dark font-sans antialiased">
+    <a href="#main-content" class="skip-to-main">Перейти к основному содержанию</a>
+    <main id="main-content" role="main"></main>
+</body>
+
 </html>
