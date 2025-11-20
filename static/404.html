@@ -1,29 +1,14 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; url=/">
     <title>Redirecting...</title>
-    <script>
-        // GitHub Pages SPA redirect script
-        // This script captures the current path and redirects to index.html
-        // while preserving the path in the URL hash for the router to handle
-        
-        (function() {
-            var path = window.location.pathname;
-            
-            // If we're not on the root path, redirect to index.html
-            // The path will be preserved in the URL for the router to handle
-            if (path !== '/') {
-                // Store the path and redirect to root
-                // The router will pick up the path from the URL
-                window.location.replace(
-                    window.location.origin + path + window.location.search + window.location.hash
-                );
-            }
-        })();
-    </script>
 </head>
+
 <body>
-    <p>Redirecting...</p>
+    <p>Redirecting to home page...</p>
 </body>
+
 </html>
