@@ -1,6 +1,8 @@
 mod html;
 mod i18n;
+mod router;
 
+use router::Route;
 use tracing_subscriber::{
     fmt::format::{FmtSpan, Pretty},
     prelude::*,
@@ -8,11 +10,30 @@ use tracing_subscriber::{
 
 use wasm_bindgen::JsValue;
 use yew::prelude::*;
+use yew_router::prelude::*;
 
 #[function_component(App)]
 fn app() -> Html {
     html! {
-        <i18n::LanguageProvider>
+        <BrowserRouter>
+            <Switch<Route> render={switch} />
+        </BrowserRouter>
+    }
+}
+
+fn switch(route: Route) -> Html {
+    let language = route.to_language();
+
+    // Handle root path redirection
+    if route == Route::Home {
+        let target_route = Route::from_language(language);
+        return html! {
+            <Redirect<Route> to={target_route} />
+        };
+    }
+
+    html! {
+        <i18n::LanguageProvider initial_language={language}>
             <AppContent />
         </i18n::LanguageProvider>
     }

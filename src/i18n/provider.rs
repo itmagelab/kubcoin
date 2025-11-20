@@ -18,13 +18,22 @@ pub(crate) struct LanguageContext {
 /// Props for LanguageProvider component
 #[derive(Properties, PartialEq)]
 pub(crate) struct LanguageProviderProps {
+    #[prop_or_default]
     pub(crate) children: Children,
+    /// Initial language from router (takes precedence over storage/browser detection)
+    #[prop_or_default]
+    pub(crate) initial_language: Option<Language>,
 }
 
 /// Provider component that manages language state
 #[function_component(LanguageProvider)]
 pub(crate) fn language_provider(props: &LanguageProviderProps) -> Html {
-    let language = use_state(|| load_from_storage().unwrap_or_else(Language::from_browser));
+    // Prioritize: 1) Router-provided language, 2) LocalStorage, 3) Browser detection
+    let initial_lang = props
+        .initial_language
+        .unwrap_or_else(|| load_from_storage().unwrap_or_else(Language::from_browser));
+
+    let language = use_state(|| initial_lang);
     let translations = use_state(|| {
         let lang = *language;
         Rc::new(load_translations(lang).unwrap_or_else(|e| {
@@ -49,6 +58,7 @@ pub(crate) fn language_provider(props: &LanguageProviderProps) -> Html {
                         translations.set(Rc::new(content));
                         save_to_storage(new_lang);
                         update_html_lang(new_lang);
+                        update_route(new_lang);
                         tracing::info!("Language switched successfully to: {}", new_lang);
                     }
                     Err(e) => {
@@ -59,7 +69,7 @@ pub(crate) fn language_provider(props: &LanguageProviderProps) -> Html {
         })
     };
 
-    // Update HTML lang attribute on mount
+    // Update HTML lang attribute on mount and when language changes
     use_effect_with(*language, |lang| {
         update_html_lang(*lang);
         || ()
@@ -139,6 +149,35 @@ fn update_html_lang(lang: Language) {
                     } else {
                         tracing::debug!("HTML lang attribute updated to: {}", lang_code);
                     }
+                }
+            }
+        }
+    }
+}
+
+/// Update route when language is changed
+#[allow(unused_variables)]
+fn update_route(lang: Language) {
+    #[cfg(target_arch = "wasm32")]
+    {
+        use crate::router::Route;
+
+        // Get the current location and update it
+        if let Some(window) = web_sys::window() {
+            let target_route = Route::from_language(lang);
+            let path = match target_route {
+                Route::Russian => "/ru",
+                Route::English => "/en",
+                Route::Home => "/",
+            };
+
+            if let Some(history) = window.history().ok() {
+                if let Err(e) =
+                    history.push_state_with_url(&wasm_bindgen::JsValue::NULL, "", Some(path))
+                {
+                    tracing::warn!("Failed to update route: {:?}", e);
+                } else {
+                    tracing::debug!("Route updated to: {}", path);
                 }
             }
         }

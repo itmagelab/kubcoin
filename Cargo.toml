@@ -11,8 +11,9 @@ tracing = "0.1.41"
 tracing-subscriber = { version = "0.3.20", features = ["json", "time"] }
 tracing-web = "0.1.3"
 wasm-bindgen = "0.2.104"
-web-sys = { version = "0.3.81", features = ["Navigator", "Window", "Storage", "HtmlElement", "Document"] }
+web-sys = { version = "0.3.81", features = ["Navigator", "Window", "Storage", "HtmlElement", "Document", "History"] }
 yew = { git = "https://github.com/yewstack/yew/", features = ["csr"] }
+yew-router = { git = "https://github.com/yewstack/yew/" }
 
 [profile.release]
 # Optimize for size
