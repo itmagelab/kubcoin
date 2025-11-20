@@ -4,9 +4,10 @@ use serde::{Deserialize, Serialize};
 use std::fmt;
 
 /// Supported languages for the KubCoin landing page.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize, Default)]
 pub(crate) enum Language {
     #[serde(rename = "ru")]
+    #[default]
     Russian,
     #[serde(rename = "en")]
     English,
@@ -46,12 +47,6 @@ impl Language {
 
         // Default to Russian
         tracing::info!("Using default language: Russian");
-        Language::Russian
-    }
-}
-
-impl Default for Language {
-    fn default() -> Self {
         Language::Russian
     }
 }

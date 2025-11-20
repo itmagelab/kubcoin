@@ -5,6 +5,7 @@ use super::types::Language;
 use std::rc::Rc;
 use yew::prelude::*;
 
+#[allow(dead_code)]
 const STORAGE_KEY: &str = "kubcoin_language";
 
 /// Context that holds the current language and translations
@@ -165,20 +166,18 @@ fn update_route(lang: Language) {
         // Get the current location and update it
         if let Some(window) = web_sys::window() {
             let target_route = Route::from_language(lang);
-            let path = match target_route {
-                Route::Russian => "/ru",
-                Route::English => "/en",
-                Route::Home => "/",
+            let hash = match target_route {
+                Route::Russian => "#/ru",
+                Route::English => "#/en",
+                Route::Home => "#/",
             };
 
-            if let Some(history) = window.history().ok() {
-                if let Err(e) =
-                    history.push_state_with_url(&wasm_bindgen::JsValue::NULL, "", Some(path))
-                {
-                    tracing::warn!("Failed to update route: {:?}", e);
-                } else {
-                    tracing::debug!("Route updated to: {}", path);
-                }
+            // Update the hash part of the URL
+            let location = window.location();
+            if let Err(e) = location.set_hash(hash) {
+                tracing::warn!("Failed to update route hash: {:?}", e);
+            } else {
+                tracing::debug!("Route hash updated to: {}", hash);
             }
         }
     }
