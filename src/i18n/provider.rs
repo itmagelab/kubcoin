@@ -2,8 +2,10 @@
 
 use super::content::{I18nContent, load_translations};
 use super::types::Language;
+use crate::router::Route;
 use std::rc::Rc;
 use yew::prelude::*;
+use yew_router::prelude::*;
 
 #[allow(dead_code)]
 const STORAGE_KEY: &str = "kubcoin_language";
@@ -29,6 +31,8 @@ pub(crate) struct LanguageProviderProps {
 /// Provider component that manages language state
 #[function_component(LanguageProvider)]
 pub(crate) fn language_provider(props: &LanguageProviderProps) -> Html {
+    let navigator = use_navigator().expect("LanguageProvider must be used within HashRouter");
+
     // Prioritize: 1) Router-provided language, 2) LocalStorage, 3) Browser detection
     let initial_lang = props
         .initial_language
@@ -44,33 +48,41 @@ pub(crate) fn language_provider(props: &LanguageProviderProps) -> Html {
         }))
     });
 
-    let set_language = {
+    // Sync state with props.initial_language when it changes (URL change)
+    {
         let language = language.clone();
         let translations = translations.clone();
-
-        Callback::from(move |new_lang: Language| {
-            if *language != new_lang {
-                tracing::info!("Switching language to: {}", new_lang);
-
-                // Load new translations
-                match load_translations(new_lang) {
-                    Ok(content) => {
-                        language.set(new_lang);
-                        translations.set(Rc::new(content));
-                        save_to_storage(new_lang);
-                        update_html_lang(new_lang);
-                        update_route(new_lang);
-                        tracing::info!("Language switched successfully to: {}", new_lang);
-                    }
-                    Err(e) => {
-                        tracing::error!("Failed to switch language: {}", e);
+        use_effect_with(props.initial_language, move |&new_route_lang| {
+            if let Some(new_lang) = new_route_lang {
+                if *language != new_lang {
+                    tracing::info!("Route changed, updating language to: {}", new_lang);
+                    match load_translations(new_lang) {
+                        Ok(content) => {
+                            language.set(new_lang);
+                            translations.set(Rc::new(content));
+                            save_to_storage(new_lang);
+                            update_html_lang(new_lang);
+                        }
+                        Err(e) => {
+                            tracing::error!("Failed to load translations for {}: {}", new_lang, e);
+                        }
                     }
                 }
             }
+            || ()
+        });
+    }
+
+    let set_language = {
+        Callback::from(move |new_lang: Language| {
+            // Instead of setting state directly, we push a new route.
+            // The route change will trigger the effect above, which updates the state.
+            let route = Route::from_language(new_lang);
+            navigator.push(&route);
         })
     };
 
-    // Update HTML lang attribute on mount and when language changes
+    // Update HTML lang attribute on mount
     use_effect_with(*language, |lang| {
         update_html_lang(*lang);
         || ()
@@ -151,33 +163,6 @@ fn update_html_lang(lang: Language) {
                         tracing::debug!("HTML lang attribute updated to: {}", lang_code);
                     }
                 }
-            }
-        }
-    }
-}
-
-/// Update route when language is changed
-#[allow(unused_variables)]
-fn update_route(lang: Language) {
-    #[cfg(target_arch = "wasm32")]
-    {
-        use crate::router::Route;
-
-        // Get the current location and update it
-        if let Some(window) = web_sys::window() {
-            let target_route = Route::from_language(lang);
-            let hash = match target_route {
-                Route::Russian => "#/ru",
-                Route::English => "#/en",
-                Route::Home => "#/",
-            };
-
-            // Update the hash part of the URL
-            let location = window.location();
-            if let Err(e) = location.set_hash(hash) {
-                tracing::warn!("Failed to update route hash: {:?}", e);
-            } else {
-                tracing::debug!("Route hash updated to: {}", hash);
             }
         }
     }
