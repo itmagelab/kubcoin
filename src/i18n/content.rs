@@ -70,6 +70,7 @@ pub(crate) struct UITranslations {
     pub(crate) start_bot: String,
     pub(crate) join_group: String,
     pub(crate) join_channel: String,
+    pub(crate) vk_group: String,
     pub(crate) learn_more: String,
     pub(crate) features_section_title: String,
     pub(crate) features_section_subtitle: String,

@@ -10,6 +10,7 @@ ui:
   start_bot: "Запустить бота"
   join_group: "Присоединиться к группе"
   join_channel: "Подписаться на канал"
+  vk_group: "Группа VK"
   learn_more: "Узнать больше"
   features_section_title: "Возможности"
   features_section_subtitle: "Всё необходимое для управления финансами"

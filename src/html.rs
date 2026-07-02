@@ -33,6 +33,7 @@ pub(crate) fn header() -> Html {
                             <div class="flex flex-col sm:flex-row gap-3 justify-center">
                                 <button::Group />
                                 <button::Channel />
+                                <button::Vk />
                             </div>
                             <div class="flex justify-center">
                                 <button::Start />

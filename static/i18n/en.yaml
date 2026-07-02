@@ -10,6 +10,7 @@ ui:
   start_bot: "Start Bot"
   join_group: "Join Group"
   join_channel: "Subscribe to Channel"
+  vk_group: "VK Group"
   learn_more: "Learn More"
   features_section_title: "Features"
   features_section_subtitle: "Everything you need for financial management"

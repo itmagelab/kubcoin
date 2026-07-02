@@ -25,6 +25,14 @@ pub(crate) fn channel() -> Html {
     link(&text, "https://t.me/itmagelab_ru", &text, false)
 }
 
+#[function_component(Vk)]
+pub(crate) fn vk() -> Html {
+    let ctx = use_language();
+    let text = ctx.translations.ui.vk_group.clone();
+
+    link(&text, "https://vk.com/kubcoin_ru", &text, false)
+}
+
 pub(crate) fn link(text: &str, url: &'static str, aria_label: &str, primary: bool) -> Html {
     let base_classes = "inline-flex items-center justify-center px-4 py-2 rounded-lg font-semibold transition-all hover-lift focus:outline-none focus:ring-2 focus:ring-offset-2";
 
