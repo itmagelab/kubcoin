@@ -201,8 +201,6 @@ qa:
     answer: "Just open the bot in Telegram and send the /start command. The bot will guide you through simple registration and will be ready to work immediately. No complicated settings!"
   - question: "Is KubCoin free?"
     answer: "Yes, the basic version of KubCoin is completely free. You can track income and expenses without limitations. A premium version with advanced analytics is planned for the future."
-  - question: "Is my data safe?"
-    answer: "Absolutely! KubCoin is written in Rust, which guarantees security at the code level. For the on-premise version, you fully control data storage."
   - question: "What currencies does the bot support?"
     answer: "Currently, the bot works with rubles (₽), but support for multiple currencies is planned, including dollars, euros, and cryptocurrencies."
   - question: "How does the bot understand voice messages?"
