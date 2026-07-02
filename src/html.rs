@@ -20,37 +20,24 @@ pub(crate) fn header() -> Html {
                 <LanguageSwitcher />
             </div>
             <div class="text-center">
-                <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
-                    <div class="w-full lg:w-1/2">
-                        <div class="bg-white/75 backdrop-blur-md border border-white/60 rounded-3xl shadow-sm hover:shadow-md p-8 mb-6 transition-all duration-300">
-                            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark mb-4 flex items-center justify-center gap-3">
-                                <CoinIcon class="w-12 h-12 md:w-16 md:h-16 text-yellow-500" />
-                                { "KubCoin" }
-                            </h1>
-                            <h2 class="text-xl md:text-2xl text-slate-500 font-medium">{ &t.subtitle }</h2>
+                <div class="max-w-3xl mx-auto">
+                    <div class="bg-white/75 backdrop-blur-md border border-white/60 rounded-3xl shadow-sm hover:shadow-md p-8 mb-8 transition-all duration-300">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark mb-4 flex items-center justify-center gap-3">
+                            <CoinIcon class="w-12 h-12 md:w-16 md:h-16 text-yellow-500" />
+                            { "KubCoin" }
+                        </h1>
+                        <h2 class="text-xl md:text-2xl text-slate-500 font-medium">{ &t.subtitle }</h2>
+                    </div>
+                    <nav aria-label={ t.aria_main_actions.clone() } class="space-y-4">
+                        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                            <button::Group />
+                            <button::Channel />
+                            <button::Vk />
                         </div>
-                        <nav aria-label={ t.aria_main_actions.clone() } class="space-y-4">
-                            <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                                <button::Group />
-                                <button::Channel />
-                                <button::Vk />
-                            </div>
-                            <div class="flex justify-center">
-                                <button::Start />
-                            </div>
-                        </nav>
-                    </div>
-
-                    <div class="w-full lg:w-1/2 flex justify-center">
-                        <figure class="phone-fade max-w-xs md:max-w-sm lg:max-w-md">
-                            <img
-                                src="images/IMG_3089.JPG"
-                                alt={ t.img_alt_screenshot.clone() }
-                                loading="eager"
-                                class="w-full h-auto rounded-3xl border-4 border-white shadow-2xl shadow-primary/10 transition-all hover:scale-[1.01] duration-300"
-                            />
-                        </figure>
-                    </div>
+                        <div class="flex justify-center">
+                            <button::Start />
+                        </div>
+                    </nav>
                 </div>
             </div>
         </header>
