@@ -1,7 +1,7 @@
 ---
 header:
   title: "KubCoin — Smart Assistant for Financial Management"
-  subtitle: "Track expenses, plan budget, and analyze spending right in Telegram"
+  subtitle: "Track expenses, plan budget, and analyze spending in Telegram and VK"
   cta_button: "Start Bot"
   aria_main_actions: "Main actions"
   img_alt_screenshot: "Screenshot of KubCoin application interface with financial management example"
