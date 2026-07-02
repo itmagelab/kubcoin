@@ -211,8 +211,6 @@ qa:
     answer: "Yes! You can add KubCoin to a group for joint management of family or project budget. Each participant will be able to add transactions."
   - question: "How often are updates released?"
     answer: "The bot is actively being developed. New features are added regularly based on user feedback. Follow the news on our Telegram channel!"
-  - question: "Is registration required?"
-    answer: "Minimal. Just type /register in the bot once, and you're ready to go. No email, passwords, or personal data required."
   - question: "What to do if the bot doesn't respond?"
     answer: "Check your internet connection and try sending the /start command. If the problem persists, contact support via /support."
 
