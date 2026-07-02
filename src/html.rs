@@ -22,12 +22,12 @@ pub(crate) fn header() -> Html {
             <div class="text-center">
                 <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
                     <div class="w-full lg:w-1/2">
-                        <div class="bg-white rounded-xl shadow-lg p-6 mb-6 transition-all hover-lift">
-                            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 flex items-center justify-center gap-3">
+                        <div class="bg-white/75 backdrop-blur-md border border-white/60 rounded-3xl shadow-sm hover:shadow-md p-8 mb-6 transition-all duration-300">
+                            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark mb-4 flex items-center justify-center gap-3">
                                 <CoinIcon class="w-12 h-12 md:w-16 md:h-16 text-yellow-500" />
                                 { "KubCoin" }
                             </h1>
-                            <h2 class="text-xl md:text-2xl text-gray-600">{ &t.subtitle }</h2>
+                            <h2 class="text-xl md:text-2xl text-slate-500 font-medium">{ &t.subtitle }</h2>
                         </div>
                         <nav aria-label={ t.aria_main_actions.clone() } class="space-y-4">
                             <div class="flex flex-col sm:flex-row gap-3 justify-center">
@@ -46,7 +46,7 @@ pub(crate) fn header() -> Html {
                                 src="images/IMG_3089.JPG"
                                 alt={ t.img_alt_screenshot.clone() }
                                 loading="eager"
-                                class="w-full h-auto rounded-2xl"
+                                class="w-full h-auto rounded-3xl border-4 border-white shadow-2xl shadow-primary/10 transition-all hover:scale-[1.01] duration-300"
                             />
                         </figure>
                     </div>
@@ -102,19 +102,19 @@ pub(crate) fn features() -> Html {
 
     html! {
         <div class="max-w-6xl mx-auto">
-            <h2 id="features-heading" class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+            <h2 id="features-heading" class="text-3xl md:text-4xl font-extrabold text-center text-dark mb-4">
                 { &ui.features_section_title }
             </h2>
-            <p class="text-lg md:text-xl text-gray-600 text-center mb-12">
+            <p class="text-lg md:text-xl text-slate-500 text-center mb-12 max-w-2xl mx-auto">
                 { &ui.features_section_subtitle }
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 { for features.iter().map(|feature| html! {
-                    <div class="bg-white rounded-xl shadow-lg p-6 text-center transition-all hover-lift h-full">
-                        <div class="text-5xl mb-4">{ &feature.icon }</div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3">{ &feature.title }</h3>
-                        <p class="text-gray-600">{ &feature.description }</p>
+                    <div class="bg-white border border-slate-100 rounded-3xl shadow-sm p-8 text-center transition-all duration-300 hover:shadow-md hover:border-accent/40 hover:-translate-y-1 h-full">
+                        <div class="w-16 h-16 mx-auto bg-[#F0F7FF] rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-sm">{ &feature.icon }</div>
+                        <h3 class="text-xl font-bold text-dark mb-3">{ &feature.title }</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">{ &feature.description }</p>
                     </div>
                 }) }
             </div>
@@ -130,29 +130,30 @@ pub(crate) fn security() -> Html {
 
     html! {
         <div class="max-w-6xl mx-auto">
-            <h2 id="security-heading" class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+            <h2 id="security-heading" class="text-3xl md:text-4xl font-extrabold text-center text-dark mb-4">
                 { &ui.security_section_title }
             </h2>
-            <p class="text-lg md:text-xl text-gray-600 text-center mb-12">
+            <p class="text-lg md:text-xl text-slate-500 text-center mb-12 max-w-2xl mx-auto">
                 { &ui.security_section_subtitle }
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 { for security.iter().map(|item| html! {
-                    <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="bg-white border border-slate-100 rounded-3xl shadow-sm hover:shadow-md p-8 transition-all duration-300">
                         <div class="prose prose-lg">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">
-                                { format!("{} {}", &item.icon, &item.title) }
+                            <h3 class="text-xl font-bold text-dark mb-3 flex items-center gap-2">
+                                <span class="text-2xl">{ &item.icon }</span>
+                                { &item.title }
                             </h3>
-                            <p class="text-gray-600">{ &item.description }</p>
+                            <p class="text-slate-600 text-sm leading-relaxed">{ &item.description }</p>
                         </div>
                     </div>
                 }) }
             </div>
 
-            <div class="bg-green-50 border border-green-200 rounded-xl p-6 mt-8">
-                <p class="text-center text-green-800">
-                    <strong class="font-semibold">{ &ui.notification_tip }</strong>
+            <div class="bg-[#F0F7FF] border border-blue-100 rounded-2xl p-6 mt-8 shadow-sm">
+                <p class="text-center text-primary text-sm md:text-base leading-relaxed">
+                    <strong class="font-bold">{ &ui.notification_tip }</strong>
                     { " " }{ &ui.notification_tip_text }
                 </p>
             </div>
@@ -167,124 +168,124 @@ pub(crate) fn pricing() -> Html {
 
     html! {
         <div class="max-w-6xl mx-auto">
-            <h2 id="pricing-heading" class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+            <h2 id="pricing-heading" class="text-3xl md:text-4xl font-extrabold text-center text-dark mb-4">
                 { &ui.pricing_section_title }
             </h2>
-            <p class="text-lg md:text-xl text-gray-600 text-center mb-12">
+            <p class="text-lg md:text-xl text-slate-500 text-center mb-12 max-w-2xl mx-auto">
                 { &ui.pricing_section_subtitle }
             </p>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-white rounded-xl shadow-lg p-8 border-2 border-green-500 transition-all hover-lift">
+                <div class="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
                     <div class="text-center">
                         <div class="text-5xl mb-4">{"🆓"}</div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">{ &ui.pricing_free_title }</h3>
-                        <p class="text-3xl font-bold text-green-600 mb-1">{ &ui.pricing_free_price }</p>
-                        <p class="text-gray-500 text-sm">{ &ui.pricing_free_period }</p>
+                        <h3 class="text-2xl font-bold text-dark mb-2">{ &ui.pricing_free_title }</h3>
+                        <p class="text-3xl font-extrabold text-secondary mb-1">{ &ui.pricing_free_price }</p>
+                        <p class="text-slate-400 text-sm font-medium">{ &ui.pricing_free_period }</p>
                     </div>
 
-                    <div class="mt-6">
-                        <ul class="space-y-2 text-gray-700">
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">{"✓"}</span>
+                    <div class="mt-8">
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex items-center text-sm">
+                                <span class="text-secondary font-bold mr-3">{"✓"}</span>
                                 { &ui.feature_unlimited_operations }
                             </li>
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">{"✓"}</span>
+                            <li class="flex items-center text-sm">
+                                <span class="text-secondary font-bold mr-3">{"✓"}</span>
                                 { &ui.feature_all_basic_functions }
                             </li>
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">{"✓"}</span>
+                            <li class="flex items-center text-sm">
+                                <span class="text-secondary font-bold mr-3">{"✓"}</span>
                                 { &ui.feature_basic_analytics }
                             </li>
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">{"✓"}</span>
+                            <li class="flex items-center text-sm">
+                                <span class="text-secondary font-bold mr-3">{"✓"}</span>
                                 { &ui.feature_expense_categories }
                             </li>
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">{"✓"}</span>
+                            <li class="flex items-center text-sm">
+                                <span class="text-secondary font-bold mr-3">{"✓"}</span>
                                 { &ui.feature_math_expressions }
                             </li>
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">{"✓"}</span>
+                            <li class="flex items-center text-sm">
+                                <span class="text-secondary font-bold mr-3">{"✓"}</span>
                                 { &ui.feature_monthly_reports }
                             </li>
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">{"✓"}</span>
+                            <li class="flex items-center text-sm">
+                                <span class="text-secondary font-bold mr-3">{"✓"}</span>
                                 { &ui.feature_community_support }
                             </li>
                         </ul>
                     </div>
 
-                    <div class="mt-6">
+                    <div class="mt-8">
                         <button::Start />
                     </div>
                 </div>
 
-                <div class="bg-white rounded-xl shadow-lg p-8 border-2 border-green-500 transition-all hover-lift relative">
-                    <span class="absolute -top-3 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                <div class="bg-white rounded-3xl shadow-md border-2 border-secondary p-8 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 relative">
+                    <span class="absolute -top-3 right-6 bg-secondary text-white px-4 py-1 rounded-full text-xs font-bold tracking-wider uppercase">
                         { &ui.pricing_premium_coming_soon }
                     </span>
                     <div class="text-center">
                         <div class="text-5xl mb-4">{"⭐"}</div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">{ &ui.pricing_premium_title }</h3>
-                        <p class="text-3xl font-bold text-green-600 mb-1">{ &ui.pricing_premium_price }</p>
-                        <p class="text-gray-500 text-sm">{ &ui.pricing_premium_period }</p>
+                        <h3 class="text-2xl font-bold text-dark mb-2">{ &ui.pricing_premium_title }</h3>
+                        <p class="text-3xl font-extrabold text-secondary mb-1">{ &ui.pricing_premium_price }</p>
+                        <p class="text-slate-400 text-sm font-medium">{ &ui.pricing_premium_period }</p>
                     </div>
 
-                    <div class="mt-6">
-                        <p class="font-semibold text-gray-900 mb-4">{ &ui.pricing_premium_everything_plus }</p>
-                        <ul class="space-y-2 text-gray-700">
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">{"✓"}</span>
+                    <div class="mt-8">
+                        <p class="font-bold text-dark mb-4 text-sm">{ &ui.pricing_premium_everything_plus }</p>
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex items-center text-sm">
+                                <span class="text-secondary font-bold mr-3">{"✓"}</span>
                                 { &ui.feature_advanced_analytics }
                             </li>
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">{"✓"}</span>
+                            <li class="flex items-center text-sm">
+                                <span class="text-secondary font-bold mr-3">{"✓"}</span>
                                 { &ui.feature_charts_visualization }
                             </li>
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">{"✓"}</span>
+                            <li class="flex items-center text-sm">
+                                <span class="text-secondary font-bold mr-3">{"✓"}</span>
                                 { &ui.feature_budget_planning }
                             </li>
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">{"✓"}</span>
+                            <li class="flex items-center text-sm">
+                                <span class="text-secondary font-bold mr-3">{"✓"}</span>
                                 { &ui.feature_multiple_currencies }
                             </li>
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">{"✓"}</span>
+                            <li class="flex items-center text-sm">
+                                <span class="text-secondary font-bold mr-3">{"✓"}</span>
                                 { &ui.feature_goals_savings }
                             </li>
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">{"✓"}</span>
+                            <li class="flex items-center text-sm">
+                                <span class="text-secondary font-bold mr-3">{"✓"}</span>
                                 { &ui.feature_priority_support }
                             </li>
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">{"✓"}</span>
+                            <li class="flex items-center text-sm">
+                                <span class="text-secondary font-bold mr-3">{"✓"}</span>
                                 { &ui.feature_extended_backups }
                             </li>
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">{"✓"}</span>
+                            <li class="flex items-center text-sm">
+                                <span class="text-secondary font-bold mr-3">{"✓"}</span>
                                 { &ui.feature_ai_text_recognition }
                             </li>
-                            <li class="flex items-center">
-                                <span class="text-green-500 mr-2">{"✓"}</span>
+                            <li class="flex items-center text-sm">
+                                <span class="text-secondary font-bold mr-3">{"✓"}</span>
                                 { &ui.feature_ai_voice_recognition}
                             </li>
                         </ul>
                     </div>
 
-                    <button class="w-full mt-6 bg-green-500 text-white py-3 px-6 rounded-lg font-semibold opacity-50 cursor-not-allowed">
+                    <button class="w-full mt-8 bg-slate-100 text-slate-400 py-3 px-6 rounded-lg font-bold text-sm tracking-wide opacity-80 cursor-not-allowed transition-all duration-300">
                         { &ui.pricing_premium_in_development }
                     </button>
                 </div>
             </div>
 
-            <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-6 mt-8 max-w-4xl mx-auto">
-                <p class="text-center text-yellow-800">
-                    <strong class="font-semibold">{ "💼 Enterprise: " }</strong>
+            <div class="bg-amber-50/70 border border-amber-100 rounded-2xl p-6 mt-8 max-w-4xl mx-auto shadow-sm">
+                <p class="text-center text-amber-800 text-sm md:text-base leading-relaxed">
+                    <strong class="font-bold">{ "💼 Enterprise: " }</strong>
                     { &ui.pricing_enterprise_text }{ " " }
-                    <a href="https://t.me/itmagelab_ru_group" target="_blank" rel="noopener noreferrer" class="text-green-600 hover:text-green-800 underline">
+                    <a href="https://t.me/itmagelab_ru_group" target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-primary font-semibold underline">
                         { &ui.pricing_enterprise_contact }
                     </a>
                     { " " }{ &ui.pricing_enterprise_suffix }
@@ -303,21 +304,21 @@ pub(crate) fn usage() -> Html {
         <div class="max-w-4xl mx-auto">
             <h2 id="stats-heading" class="sr-only">{ &ui.stats_section_title }</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6" aria-label={ ui.stats_section_title.clone() }>
-                <div class="text-center">
-                    <p class="text-sm text-gray-500 uppercase tracking-wide">{ &ui.stats_total_usage }</p>
-                    <p class="text-3xl font-bold text-gray-900" aria-label={ ui.stats_total_usage_aria.clone() }>{ 8 }</p>
+                <div class="bg-white border border-slate-100/80 rounded-2xl p-6 shadow-sm">
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">{ &ui.stats_total_usage }</p>
+                    <p class="text-4xl font-extrabold text-secondary" aria-label={ ui.stats_total_usage_aria.clone() }>{ 8 }</p>
                 </div>
-                <div class="text-center">
-                    <p class="text-sm text-gray-500 uppercase tracking-wide">{ &ui.stats_on_premise }</p>
-                    <p class="text-3xl font-bold text-gray-900" aria-label={ ui.stats_on_premise_aria.clone() }>{ 1 }</p>
+                <div class="bg-white border border-slate-100/80 rounded-2xl p-6 shadow-sm">
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">{ &ui.stats_on_premise }</p>
+                    <p class="text-4xl font-extrabold text-secondary" aria-label={ ui.stats_on_premise_aria.clone() }>{ 1 }</p>
                 </div>
-                <div class="text-center">
-                    <p class="text-sm text-gray-500 uppercase tracking-wide">{ &ui.stats_followers }</p>
-                    <p class="text-3xl font-bold text-gray-900" aria-label={ ui.stats_followers_aria.clone() }>{ "1K" }</p>
+                <div class="bg-white border border-slate-100/80 rounded-2xl p-6 shadow-sm">
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">{ &ui.stats_followers }</p>
+                    <p class="text-4xl font-extrabold text-secondary" aria-label={ ui.stats_followers_aria.clone() }>{ "1K" }</p>
                 </div>
-                <div class="text-center">
-                    <p class="text-sm text-gray-500 uppercase tracking-wide">{ &ui.stats_likes }</p>
-                    <p class="text-3xl font-bold text-gray-900" aria-label={ ui.stats_likes_aria.clone() }>{ 789 }</p>
+                <div class="bg-white border border-slate-100/80 rounded-2xl p-6 shadow-sm">
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">{ &ui.stats_likes }</p>
+                    <p class="text-4xl font-extrabold text-secondary" aria-label={ ui.stats_likes_aria.clone() }>{ 789 }</p>
                 </div>
             </div>
         </div>
@@ -334,7 +335,7 @@ fn qa() -> Html {
 
     html! {
         <div class="max-w-4xl mx-auto">
-            <h2 id="faq-heading" class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8">
+            <h2 id="faq-heading" class="text-3xl md:text-4xl font-extrabold text-center text-dark mb-8">
                 { &ui.faq_section_title }
             </h2>
             <div class="space-y-4">
@@ -351,17 +352,17 @@ fn qa() -> Html {
                         })
                     };
                     html! {
-                        <div class={classes!("bg-white", "rounded-xl", "shadow-lg", "p-6", "transition-all", if is_open { "ring-2 ring-green-500" } else { "" })} role="article">
+                        <div class={classes!("bg-white", "border", "border-slate-100", "rounded-2xl", "shadow-sm", "p-6", "transition-all", "duration-300", if is_open { "ring-2 ring-secondary border-transparent shadow-md" } else { "hover:shadow-md" })} role="article">
                             <button
-                                class="w-full text-left"
+                                class="w-full text-left focus:outline-none"
                                 onclick={on_click}
                                 aria-expanded={is_open.to_string()}
                                 aria-controls={format!("answer-{}", idx)}
                             >
                                 <div class="flex justify-between items-center">
-                                    <strong class="text-lg font-semibold text-gray-900">{ &item.question }</strong>
-                                    <span class={classes!("transform", "transition-transform", if is_open { "rotate-180" } else { "" })}>
-                                        <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <strong class="text-lg font-bold text-dark">{ &item.question }</strong>
+                                    <span class={classes!("transform", "transition-transform", "duration-300", if is_open { "rotate-180 text-secondary" } else { "text-slate-400" })}>
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                                         </svg>
                                     </span>
@@ -373,7 +374,7 @@ fn qa() -> Html {
                                 role="region"
                                 aria-hidden={(!is_open).to_string()}
                             >
-                                <div class="faq-answer">
+                                <div class="faq-answer text-sm leading-relaxed text-slate-600">
                                     { &item.answer }
                                 </div>
                             </div>
@@ -393,7 +394,7 @@ pub(crate) fn chats() -> Html {
 
     html! {
         <div class="max-w-6xl mx-auto">
-            <h2 id="examples-heading" class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8">
+            <h2 id="examples-heading" class="text-3xl md:text-4xl font-extrabold text-center text-dark mb-8">
                 { &ui.chats_section_title }
             </h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -417,29 +418,32 @@ pub(crate) fn chat(props: &ChatProps) -> Html {
     let chat = &props.chat;
 
     html! {
-        <article class="bg-white rounded-xl shadow-lg p-6 border border-gray-200" role="article">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">{ &chat.title }</h3>
-            <p class="text-gray-600 mb-4">{ &chat.subtitle }</p>
-
-            { for chat.dialogs.iter().enumerate().map(|(idx, dialog)| {
-            let user_msg = ui.aria_user_message.clone();
-            let bot_resp = ui.aria_bot_response.clone();
-            html! {
-            <div class="space-y-3">
-                <div class="flex justify-end" role="group" aria-label={format!("{} {}", user_msg, idx + 1)}>
-                    <div class="bg-green-500 text-white rounded-2xl rounded-br-none px-4 py-2 max-w-[80%]">
-                        <p class="text-sm">{ &dialog.req }</p>
-                    </div>
-                </div>
-                <div class="flex justify-start" role="group" aria-label={format!("{} {}", bot_resp, idx + 1)}>
-                    <div class="bg-gray-100 text-gray-800 rounded-2xl rounded-bl-none px-4 py-2 max-w-[80%]">
-                        <pre class="text-sm whitespace-pre-wrap break-words overflow-wrap-anywhere">{ &dialog.res }</pre>
-                    </div>
-                </div>
+        <article class="bg-white border border-slate-100 rounded-3xl shadow-sm hover:shadow-md p-6 transition-all duration-300 flex flex-col justify-between" role="article">
+            <div>
+                <h3 class="text-xl font-bold text-dark mb-2">{ &chat.title }</h3>
+                <p class="text-slate-500 text-sm mb-6">{ &chat.subtitle }</p>
             </div>
-            }
 
-            }) }
+            <div class="space-y-4">
+                { for chat.dialogs.iter().enumerate().map(|(idx, dialog)| {
+                    let user_msg = ui.aria_user_message.clone();
+                    let bot_resp = ui.aria_bot_response.clone();
+                    html! {
+                        <div class="space-y-2">
+                            <div class="flex justify-end" role="group" aria-label={format!("{} {}", user_msg, idx + 1)}>
+                                <div class="bg-secondary text-white rounded-2xl rounded-br-none px-4 py-2 max-w-[85%] shadow-sm">
+                                    <p class="text-sm">{ &dialog.req }</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-start" role="group" aria-label={format!("{} {}", bot_resp, idx + 1)}>
+                                <div class="bg-[#F0F7FF] text-dark border border-blue-50/50 rounded-2xl rounded-bl-none px-4 py-2 max-w-[85%] shadow-sm">
+                                    <pre class="text-sm font-sans whitespace-pre-wrap break-words overflow-wrap-anywhere">{ &dialog.res }</pre>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }) }
+            </div>
         </article>
     }
 }
@@ -450,12 +454,12 @@ pub(crate) fn footer() -> Html {
     let footer = &ctx.translations.footer;
 
     html! {
-        <footer class="bg-gray-800 text-white py-8" role="contentinfo">
+        <footer class="bg-dark text-slate-400 py-12 border-t border-slate-900" role="contentinfo">
             <div class="max-w-6xl mx-auto px-4 text-center">
-                <p class="text-sm text-gray-300">
+                <p class="text-sm">
                     <small>{ &footer.copyright }</small>
                 </p>
-                <p class="text-sm text-gray-300 mt-2">
+                <p class="text-sm mt-2">
                     <small>{ &footer.developed_by }</small>
                 </p>
             </div>

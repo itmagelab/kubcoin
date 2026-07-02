@@ -30,13 +30,13 @@ pub(crate) fn link(text: &str, url: &'static str, aria_label: &str, primary: boo
 
     let (color_classes, focus_classes) = if primary {
         (
-            "bg-green-600 text-white hover:bg-green-700",
-            "focus:ring-green-500",
+            "bg-secondary text-white hover:bg-primary",
+            "focus:ring-secondary",
         )
     } else {
         (
-            "bg-gray-200 text-gray-800 hover:bg-gray-300 border border-gray-300",
-            "focus:ring-gray-500",
+            "bg-slate-100 text-dark hover:bg-slate-200 border border-slate-200/60",
+            "focus:ring-secondary",
         )
     };
 
@@ -60,13 +60,13 @@ pub(crate) fn link_medium(text: &str, url: &'static str, aria_label: &str, prima
 
     let (color_classes, focus_classes) = if primary {
         (
-            "bg-green-600 text-white hover:bg-green-700",
-            "focus:ring-green-500",
+            "bg-secondary text-white hover:bg-primary",
+            "focus:ring-secondary",
         )
     } else {
         (
-            "bg-gray-200 text-gray-800 hover:bg-gray-300 border border-gray-300",
-            "focus:ring-gray-500",
+            "bg-slate-100 text-dark hover:bg-slate-200 border border-slate-200/60",
+            "focus:ring-secondary",
         )
     };
 

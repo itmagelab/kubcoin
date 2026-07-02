@@ -42,7 +42,7 @@ fn switch(route: Route) -> Html {
 #[function_component(AppContent)]
 fn app_content() -> Html {
     html! {
-        <div class="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100">
+        <div class="min-h-screen bg-gradient-to-b from-light via-white to-light">
             <section class="py-8 md:py-16">
                 <div class="container mx-auto px-4">
                     <html::Header />

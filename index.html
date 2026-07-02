@@ -40,10 +40,10 @@
 <meta name="revisit-after" content="7 days" />
 <link rel="canonical" href="https://kubcoin.ru/" />
 
-<!-- Preload critical resources -->
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-<link rel="preconnect" href="https://mc.yandex.ru" crossorigin />
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+<!-- Google Fonts: Outfit -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- Tailwind CSS via CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
@@ -52,11 +52,14 @@
         theme: {
             extend: {
                 colors: {
-                    primary: '#10b981',
-                    secondary: '#059669',
-                    accent: '#34d399',
-                    dark: '#1f2937',
-                    light: '#f0fdf4'
+                    primary: '#0F398A',
+                    secondary: '#1D63FF',
+                    accent: '#5CA3FF',
+                    dark: '#0F2557',
+                    light: '#F3F8FF'
+                },
+                fontFamily: {
+                    sans: ['Outfit', 'sans-serif']
                 }
             }
         }
@@ -181,8 +184,8 @@
     .faq-answer {
         display: none;
         padding: 1rem;
-        border-left: 3px solid #10b981;
-        background-color: #f0fdf4;
+        border-left: 3px solid #1D63FF;
+        background-color: #F3F8FF;
         border-radius: 6px;
         color: #374151;
     }
@@ -224,15 +227,15 @@
 
     /* Focus indicators for accessibility */
     *:focus {
-        outline: 3px solid #10b981;
+        outline: 3px solid #1D63FF;
         outline-offset: 3px;
     }
 
     a:focus,
     button:focus {
-        outline: 3px solid #10b981;
+        outline: 3px solid #1D63FF;
         outline-offset: 3px;
-        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+        box-shadow: 0 0 0 3px rgba(29, 99, 255, 0.25);
     }
 
     /* Skip to main content link for accessibility */
