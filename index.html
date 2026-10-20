@@ -1,363 +1,41 @@
 <!doctype html>
 <html lang="ru">
-
-<head></head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>
-    KubCoin - Телеграм бот для управления финансами | iTmageLab
-</title>
-<meta name="description"
-    content="KubCoin — современный Telegram-бот для учёта доходов и расходов. Быстрый, безопасный и удобный инструмент управления личными финансами. Создан на Rust для максимальной производительности." />
-<meta name="keywords"
-    content="KubCoin, финансовый бот, Telegram бот, учёт финансов, управление расходами, личные финансы, бот для финансов, iTmageLab, Rust, финансовая аналитика" />
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://kubcoin.ru/" />
-<meta property="og:title" content="KubCoin — Telegram-бот для управления финансами" />
-<meta property="og:description"
-    content="Управляйте своими доходами и расходами легко и безопасно. KubCoin — современный финансовый помощник в Telegram с мощной аналитикой." />
-<meta property="og:image" content="https://kubcoin.ru/images/og-image.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="KubCoin - Финансовый бот для Telegram" />
-<meta property="og:locale" content="ru_RU" />
-<meta property="og:site_name" content="KubCoin" />
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:url" content="https://kubcoin.ru/" />
-<meta name="twitter:title" content="KubCoin — Telegram-бот для управления финансами" />
-<meta name="twitter:description"
-    content="Управляйте своими доходами и расходами легко и безопасно. KubCoin — современный финансовый помощник в Telegram." />
-<meta name="twitter:image" content="https://kubcoin.ru/images/og-image.png" />
-
-<!-- Additional SEO meta tags -->
-<meta name="author" content="iTmageLab" />
-<meta name="robots" content="index, follow" />
-<meta name="language" content="Russian" />
-<meta name="revisit-after" content="7 days" />
-<link rel="canonical" href="https://kubcoin.ru/" />
-
-<!-- Google Fonts: Outfit -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<!-- Tailwind CSS via CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                colors: {
-                    primary: '#0F398A',
-                    secondary: '#1D63FF',
-                    accent: '#5CA3FF',
-                    dark: '#0F2557',
-                    light: '#F3F8FF'
-                },
-                fontFamily: {
-                    sans: ['Outfit', 'sans-serif']
-                }
-            }
-        }
-    }
-</script>
-
-<!-- Font Awesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link data-trunk rel="copy-dir" href="static/images" />
-<link data-trunk rel="copy-file" href="static/yandex_bc389150b2accc4c.html" />
-<link data-trunk rel="copy-file" href="static/robots.txt" />
-<link data-trunk rel="copy-file" href="static/sitemap.xml" />
-<link rel="icon" type="image/png" href="images/favicon.ico" />
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-        (function (m, e, t, r, i, k, a) {
-            m[i] =
-                m[i] ||
-                function () {
-                    (m[i].a = m[i].a || []).push(arguments);
-                };
-            m[i].l = 1 * new Date();
-            for (var j = 0; j < document.scripts.length; j++) {
-                if (document.scripts[j].src === r) {
-                    return;
-                }
-            }
-            ((k = e.createElement(t)),
-                (a = e.getElementsByTagName(t)[0]),
-                (k.async = 1),
-                (k.src = r),
-                a.parentNode.insertBefore(k, a));
-        })(
-            window,
-            document,
-            "script",
-            "https://mc.yandex.ru/metrika/tag.js?id=104580346",
-            "ym",
-        );
-
-    ym(104580346, "init", {
-        ssr: true,
-        webvisor: true,
-        clickmap: true,
-        ecommerce: "dataLayer",
-        accurateTrackBounce: true,
-        trackLinks: true,
-    });
-</script>
-<!-- Structured Data (JSON-LD) for SEO -->
-<script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "SoftwareApplication",
-                "name": "KubCoin",
-                "applicationCategory": "FinanceApplication",
-                "operatingSystem": "Telegram",
-                "offers": {
-                    "@type": "Offer",
-                    "price": "0",
-                    "priceCurrency": "RUB"
-                },
-                "description": "Безопасный и высокопроизводительный финансовый бот, созданный на Rust. Автоматизация, аналитика и надёжность в одном инструменте.",
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "4.8",
-                    "ratingCount": "150"
-                },
-                "author": {
-                    "@type": "Organization",
-                    "name": "iTmageLab",
-                    "url": "https://kubcoin.ru"
-                }
-            }
-        </script>
-<script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "Organization",
-                "name": "KubCoin",
-                "url": "https://kubcoin.ru",
-                "logo": "https://kubcoin.ru/images/og-image.png",
-                "sameAs": [
-                    "https://t.me/kubcoin_bot",
-                    "https://t.me/itmagelab_ru_group",
-                    "https://t.me/itmagelab_ru"
-                ],
-                "contactPoint": {
-                    "@type": "ContactPoint",
-                    "contactType": "Customer Support",
-                    "url": "https://t.me/itmagelab_ru_group"
-                }
-            }
-        </script>
-<noscript>
-    <div></div>
-    <img src="https://mc.yandex.ru/watch/104580346" style="position: absolute; left: -9999px" alt="" /></div>
-</noscript>
-<!-- /Yandex.Metrika counter -->
-<style>
-    .phone-fade {
-        position: relative;
-        overflow: hidden;
-        border-radius: 20px;
-    }
-
-    .phone-fade::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.6);
-        pointer-events: none;
-    }
-
-    .faq-item {
-        margin-bottom: 1rem;
-    }
-
-    .faq-answer {
-        display: none;
-        padding: 1rem;
-        border-left: 3px solid #1D63FF;
-        background-color: #F3F8FF;
-        border-radius: 6px;
-        color: #374151;
-    }
-
-    .faq-item.is-active .faq-answer {
-        display: block;
-        animation: fadeIn 0.3s ease;
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(-5px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* Screen reader only utility class */
-    .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border-width: 0;
-    }
-
-    /* Smooth scroll behavior */
-    html {
-        scroll-behavior: smooth;
-    }
-
-    /* Focus indicators for accessibility */
-    *:focus {
-        outline: 3px solid #1D63FF;
-        outline-offset: 3px;
-    }
-
-    a:focus,
-    button:focus {
-        outline: 3px solid #1D63FF;
-        outline-offset: 3px;
-        box-shadow: 0 0 0 3px rgba(29, 99, 255, 0.25);
-    }
-
-    /* Skip to main content link for accessibility */
-    .skip-to-main {
-        position: absolute;
-        left: -9999px;
-        z-index: 999;
-        padding: 1em;
-        background-color: #10b981;
-        color: white;
-        text-decoration: none;
-    }
-
-    .skip-to-main:focus {
-        left: 50%;
-        transform: translateX(-50%);
-        top: 0;
-        outline: 3px solid #ffffff;
-        outline-offset: 2px;
-    }
-
-    /* Smooth animations for UX */
-    .transition-all {
-        transition: all 0.3s ease;
-    }
-
-    .hover-lift:hover {
-        transform: translateY(-2px);
-    }
-
-    /* Loading animation */
-    @keyframes pulse {
-
-        0%,
-        100% {
-            opacity: 1;
-        }
-
-        50% {
-            opacity: 0.5;
-        }
-    }
-
-    .animate-pulse {
-        animation: pulse 1.5s ease-in-out infinite;
-    }
-
-    /* Loading skeleton styles */
-    .skeleton {
-        background: linear-gradient(90deg,
-                #f3f4f6 0%,
-                #e5e7eb 20%,
-                #f3f4f6 40%,
-                #f3f4f6 100%);
-        background-size: 200% 100%;
-        animation: loading 1.5s ease-in-out infinite;
-        border-radius: 6px;
-    }
-
-    @keyframes loading {
-        0% {
-            background-position: 200% 0;
-        }
-
-        100% {
-            background-position: -200% 0;
-        }
-    }
-
-    .skeleton-text {
-        height: 1rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .skeleton-title {
-        height: 2rem;
-        margin-bottom: 1rem;
-        width: 60%;
-    }
-
-    .skeleton-box {
-        height: 200px;
-        margin-bottom: 1rem;
-    }
-
-    .skeleton-button {
-        height: 44px;
-        width: 150px;
-        border-radius: 6px;
-    }
-
-    /* Hide skeleton when content is loaded */
-    .content-loaded .skeleton {
-        display: none;
-    }
-
-    /* Custom utility classes for consistency */
-    .bg-light {
-        background-color: #f0fdf4;
-    }
-
-    .text-dark {
-        color: #1f2937;
-    }
-
-    .text-muted {
-        color: #6b7280;
-    }
-
-    .border-accent {
-        border-color: #34d399;
-    }
-
-    .border-primary {
-        border-color: #10b981;
-    }
-</style>
-</head>
-
-<body class="bg-light text-dark font-sans antialiased">
-    <a href="#main-content" class="skip-to-main">Перейти к основному содержанию</a>
-    <main id="main-content" role="main"></main>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f8f5" />
+    <meta name="keywords" content="KubCoin, финансовый бот, Telegram бот, учёт финансов, управление расходами, личные финансы, iTmageLab" />
+    <meta name="author" content="iTmageLab" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="KubCoin" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="KubCoin — финансовый бот для Telegram" />
+    <meta name="description" content="KubCoin — умный помощник для учёта расходов и бюджета прямо в Telegram. Быстро, понятно и под вашим контролем." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kubcoin.ru/" />
+    <meta property="og:title" content="KubCoin — финансы без лишних усилий" />
+    <meta property="og:description" content="Финансовый помощник, который всегда под рукой. Записывайте расходы сообщением в Telegram." />
+    <meta property="og:image" content="https://kubcoin.ru/images/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://kubcoin.ru/" />
+    <link rel="icon" href="/images/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>KubCoin — финансы без лишних усилий</title>
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"SoftwareApplication","name":"KubCoin","applicationCategory":"FinanceApplication","operatingSystem":"Telegram","offers":{"@type":"Offer","price":"0","priceCurrency":"RUB"},"url":"https://kubcoin.ru/"}
+    </script>
+    <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<e.scripts.length;j++){if(e.scripts[j].src===r)return}k=e.createElement(t);a=e.getElementsByTagName(t)[0];k.async=1;k.src=r;a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js?id=104580346","ym");
+      ym(104580346,"init",{webvisor:true,clickmap:true,accurateTrackBounce:true,trackLinks:true});
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержанию</a>
+    <div id="app"><div class="boot-screen"><span class="brand-mark">K</span><span>KubCoin</span></div></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

@@ -117,13 +117,9 @@ For privacy-conscious users, KubCoin offers self-hosting options, giving you com
 
 ## 📊 About This Landing Page
 
-This landing page is built with:
-- **Rust** (edition 2024) — Systems programming language
-- **Yew** — React-like framework for Rust
-- **WebAssembly** — Fast, secure web compilation target
-- **Bulma CSS** — Modern responsive framework
+The landing page is now built with **React, TypeScript, and Vite**, with responsive styling in CSS and Russian/English content loaded from the existing YAML translations. The interface is a static site that can be deployed to any static hosting provider.
 
-The site demonstrates modern web development practices with type-safe, high-performance code compiled to WASM for optimal browser execution.
+The former Rust/Yew source files remain in the repository but are no longer the website entry point.
 
 ---
 
